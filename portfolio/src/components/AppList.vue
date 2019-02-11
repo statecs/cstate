@@ -16,7 +16,7 @@
           <div class="Card-header-meta"></div>
           <div class="Card-header-add">
             <button type="button">
-              <font-awesome-icon icon="plus" size="lg"/>
+              <button type="button" class="PlusIcon"></button>
             </button>
           </div>
         </header>
@@ -66,11 +66,11 @@ export default {
     transitionToFull: function(event, index) {
       var el = event.currentTarget; //target;
       var body = document.body;
-      var distanceToTop = Math.abs(el.getBoundingClientRect().top);
+      //var distanceToTop = Math.abs(el.getBoundingClientRect().top);
       //console.log(distanceToTop);
       //var distanceToTop = el.getBoundingClientRect().top;
-      distanceToTop = -1 * distanceToTop;
-      el.style.transform = "translateY(" + distanceToTop + "px)";
+      // distanceToTop = -1 * distanceToTop;
+      // el.style.transform = "translateY(" + distanceToTop + "px)";
 
       setTimeout(() => (this.transitionIndex = index), 200);
 
@@ -85,6 +85,7 @@ export default {
       //console.log(distanceToTop);
       this.transitioning = !this.transitioning;
       body.classList.toggle("no-scroll");
+      //body.style.overflow = "hidden";
     }
   },
   data: function() {
@@ -166,6 +167,11 @@ export default {
   margin: 0 auto;
 }
 
+.no-scroll .app-popup-window {
+  position: fixed;
+  z-index: 1;
+}
+
 h3 {
   margin: 40px 0 0;
 }
@@ -180,7 +186,37 @@ li {
 a {
   color: #42b983;
 }
+button {
+  padding: 0;
+  background: none;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
 
+.PlusIcon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.PlusIcon:before,
+.PlusIcon:after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 16px;
+  background-color: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.PlusIcon:after {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
+}
 .Card {
   box-shadow: 0 23px 7px -21px rgba(0, 0, 0, 0.5);
   background-color: black;
@@ -218,21 +254,22 @@ a {
   height: 0;
   transition: height 400ms ease-out 200ms;
 }
+
 .Card.is-active {
-  margin-left: 0;
-  margin-right: 0;
-  border-radius: 0;
-  height: 100vh;
-  overflow: scroll;
-  margin: auto;
-  top: 0;
+  margin: 0px;
+  -webkit-overflow-scrolling: touch;
   bottom: 0;
   left: 0;
+  overflow: auto;
+  position: fixed;
   right: 0;
-  z-index: 999999;
+  top: 0;
+  z-index: 9999;
+  min-height: 100vh;
 }
 .no-scroll .Card.is-active {
   height: 100vh;
+  position: fixed;
 }
 
 .Card.is-active .Card-header-add {
@@ -241,12 +278,13 @@ a {
 }
 .Card.is-active .Card-body-description {
   opacity: 1;
-  height: 3em;
   -webkit-transform: scale(1);
   transform: scale(1);
   padding-top: 0;
   z-index: 999;
   color: black;
+  text-align: left;
+  line-height: 1.7em;
 }
 
 .Card.is-active:after {
