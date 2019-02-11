@@ -68,9 +68,23 @@ export default {
       var body = document.body;
       //var distanceToTop = Math.abs(el.getBoundingClientRect().top);
       //console.log(distanceToTop);
-      //var distanceToTop = el.getBoundingClientRect().top;
-      // distanceToTop = -1 * distanceToTop;
-      // el.style.transform = "translateY(" + distanceToTop + "px)";
+      if (
+        !(
+          navigator.userAgent.match(/Android/i) ||
+          navigator.userAgent.match(/webOS/i) ||
+          navigator.userAgent.match(/iPhone/i) ||
+          navigator.userAgent.match(/iPad/i) ||
+          navigator.userAgent.match(/iPod/i) ||
+          navigator.userAgent.match(/BlackBerry/i) ||
+          navigator.userAgent.match(/Windows Phone/i)
+        )
+      ) {
+        var distanceToTop = el.getBoundingClientRect().top;
+        distanceToTop = -1 * distanceToTop;
+        el.style.transform = "translateY(" + distanceToTop + "px)";
+      } else {
+        body.classList.toggle("mobile-scroll");
+      }
 
       setTimeout(() => (this.transitionIndex = index), 200);
 
@@ -253,6 +267,7 @@ button:focus {
   right: 0;
   height: 0;
   transition: height 400ms ease-out 200ms;
+  z-index: -1;
 }
 
 .Card.is-active {
@@ -261,13 +276,12 @@ button:focus {
   bottom: 0;
   left: 0;
   overflow: auto;
-  position: fixed;
   right: 0;
   top: 0;
   z-index: 9999;
   min-height: 100vh;
 }
-.no-scroll .Card.is-active {
+body.mobile-scroll.no-scroll div#app div.hello section a.Card.is-active {
   height: 100vh;
   position: fixed;
 }
