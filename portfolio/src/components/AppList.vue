@@ -37,7 +37,6 @@
           <div class="container-fluid content-holder">
             <div class="inner-content" data-position="20vh" data-position-expanded="40vh">
               <div class="info-holder">
-                <div class="date-category" v-html="card.publish_date"></div>
                 <div class="like-wrapper btn-liked">
                   <i class="fa fa-heart fa-lg"></i>
                   <span class="count"></span>
@@ -47,7 +46,9 @@
                 </div>
               </div>
               <h2 class="title" v-html="card.title"></h2>
-              <div class="description" v-html="card.description"></div>
+              <div v-for="item in card.description" :key="item">
+                <div v-html="item"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -111,25 +112,45 @@ export default {
       transitionFixedIndex: null,
       items: [
         {
-          message: "Project #1",
-          publish_date: "July 2018",
-          description:
-            "This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH.  <br /><br /><br /><br /><br /> <img width='100%' src='https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'> This is the playful lorem ipsum of the ipsum lawlerH. <br> This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH.",
-          cover:
-            "https://images.unsplash.com/photo-1416339684178-3a239570f315?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+          message: "Studs - Studieresan",
+          publish_date: "Sketch, Illustrator, InDesign | Summer 2018",
+          description: [
+            "<img width='100%' src='http://cstate.se/assets/studs_screen4.jpg'>",
+            "<img width='100%' src='http://cstate.se/assets/studs_screen2.jpg'>",
+            "<img width='100%' src='http://cstate.se/assets/studs_screen5.jpg'>",
+            "<iframe width='100%' height='800px' src='https://drive.google.com/file/d/1X8-gNNXPlpWrLF4Uf1I9xj2caoDKi7ws/view?usp=sharing'>"
+          ],
+          cover: "http://cstate.se/assets/studs_screen1.jpg",
           author: {
-            name: "Malcom Fox",
+            name: "Creativestudio",
             image:
               "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
           }
         },
         {
-          message: "Project #2",
-          publish_date: "July 2018",
-          description:
-            "This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH.  <br /><br /><br /><br /><br /> <img width='100%' src='https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'> This is the playful lorem ipsum of the ipsum lawlerH. <br> This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH. This is the playful lorem ipsum of the ipsum lawlerH.",
-          cover:
-            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+          message: "Design Thinking - Key-experience",
+          publish_date: "Sketch | February 2019",
+          description: [
+            "<img max-width='300px' src='http://cstate.se/assets/Cardinal_screen1.png'>",
+            "<img src='http://cstate.se/assets/Cardinal_screen2.png'>",
+            "<img src='http://cstate.se/assets/Cardinal_screen3.png'>",
+            "<img src='http://cstate.se/assets/Cardinal_screen4.png'>"
+          ],
+          cover: "http://cstate.se/assets/Cardinal_screen5.jpeg",
+          author: {
+            name: "Creativestudio",
+            image:
+              "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+          }
+        },
+        {
+          message: "THS Website",
+          publish_date: "AngularJS | 2017/2019",
+          description: [
+            "<a href='https://kths.se/'>Link to website</a>",
+            "<img width='100%' src='http://cstate.se/assets/ths_screen6.png'>"
+          ],
+          cover: "http://cstate.se/assets/ths_screen1.jpg",
           author: {
             name: "Malcom Fox",
             image:
@@ -137,36 +158,19 @@ export default {
           }
         },
         {
-          message: "Project #3",
-          publish_date: "July 2018",
-          cover:
-            "https://images.unsplash.com/photo-1532510987384-6a8118ab6ab2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1608&q=80",
+          message: "CreativeStudio",
+          publish_date: "HTML5/PHP/Javascript | Summer 2018",
+          description: [
+            "<img width='100%' src='http://cstate.se/assets/creativestudio_screen6.jpg'>",
+            "<img width='100%' src='http://cstate.se/assets/creativestudio_screen4.jpg'>",
+            "<img width='100%' src='http://cstate.se/assets/creativestudio_screen3.jpg'>",
+            "<img width='100%' src='http://cstate.se/assets/creativestudio_screen2.jpg'>"
+          ],
+          cover: "http://cstate.se/assets/creativestudio_screen8.jpg",
           author: {
-            name: "Malcom Fox",
+            name: "Creativestudio",
             image:
-              "https://pbs.twimg.com/profile_images/565258371092070400/kbW-3WU0.jpeg"
-          }
-        },
-        {
-          message: "Project #4",
-          publish_date: "July 2018",
-          cover:
-            "https://images.unsplash.com/photo-1528879342222-323df0d65c9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80",
-          author: {
-            name: "Malcom Fox",
-            image:
-              "https://pbs.twimg.com/profile_images/565258371092070400/kbW-3WU0.jpeg"
-          }
-        },
-        {
-          message: "Project #5",
-          publish_date: "July 2018",
-          cover:
-            "https://images.unsplash.com/photo-1535598745644-bc7913bb1a2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80",
-          author: {
-            name: "Malcom Fox",
-            image:
-              "https://pbs.twimg.com/profile_images/565258371092070400/kbW-3WU0.jpeg"
+              "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
           }
         }
       ]
@@ -285,6 +289,12 @@ body.mobile-scroll.no-scroll div#app div.hello section a.Card.is-active {
   height: 100vh;
   position: fixed;
 }
+a.Card .Card-body-description {
+  overflow: hidden;
+}
+a.Card.is-active .Card-body-description {
+  overflow: visible;
+}
 
 .Card.is-active .Card-header-add {
   -webkit-transform: rotate(135deg);
@@ -301,9 +311,6 @@ body.mobile-scroll.no-scroll div#app div.hello section a.Card.is-active {
   line-height: 1.7em;
 }
 
-.Card.is-active:after {
-  height: 100vh;
-}
 .Card:active {
   -webkit-transform: scale(0.95);
   transform: scale(0.95);
@@ -349,13 +356,21 @@ body.mobile-scroll.no-scroll div#app div.hello section a.Card.is-active {
 
 .inner-content {
   margin: 0 auto;
-  max-width: 60vw;
+  max-width: 90vw;
   top: 10vh;
   padding: 50px;
   position: relative;
   background-color: #fff;
 }
-
+body.mobile-scroll.no-scroll
+  div#app
+  section
+  a.Card.is-active
+  div.Card-body-description
+  div.container-fluid.content-holder
+  div.inner-content {
+  padding: 50px 20px;
+}
 .inner-content {
   padding-bottom: env(safe-area-inset-bottom); /* for iPhone X */
   border-top-left-radius: 20px;
