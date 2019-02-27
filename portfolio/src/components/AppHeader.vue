@@ -5,7 +5,7 @@
       <div class="bar2"></div>
       <div class="bar3"></div>
     </div>-->
-    <div class="sticky-wrapper">
+    <!-- <div class="sticky-wrapper">
       <nav class="subnav">
         <div class="row">
           <ul>
@@ -24,7 +24,7 @@
           </ul>
         </div>
       </nav>
-    </div>
+    </div>-->
   </header>
 </template>
 

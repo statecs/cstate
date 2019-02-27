@@ -17,7 +17,6 @@
                      }"
       >
         <header class="Card-header">
-          <div class="Card-header-meta"></div>
           <div class="Card-header-add">
             <button type="button">
               <button type="button" class="PlusIcon"></button>
@@ -39,8 +38,9 @@
         </div>
         <div v-if="card.description" class="Card-body-description">
           <!-- <div style="overflow:scroll" v-html="card.description"></div>-->
-          <div v-on:click.stop class="container-fluid content-holder">
+          <div class="container-fluid content-holder">
             <div
+              v-on:click.stop
               class="inner-content"
               id="content-scroll"
               data-position="20vh"
@@ -302,6 +302,7 @@ button:focus {
   left: 0;
   right: 0;
   top: 0;
+  padding: 0;
   z-index: 9999;
   min-height: 100vh;
 }
@@ -335,9 +336,9 @@ a.Card.is-active .Card-body-description {
   -webkit-transform: scale(0.95);
   transform: scale(0.95);
 }
-.Card-header {
-  display: flex;
-  width: 100%;
+.Card.is-active .Card-header {
+  position: fixed;
+  padding: 15px;
 }
 .Card-header-add {
   background-color: #fff;
@@ -357,7 +358,7 @@ a.Card.is-active .Card-body-description {
     font-size: 1.3em;
   }
   a.Card.is-active .Card-body-description {
-    padding: 50px;
+    padding: 0 60px;
   }
 }
 .Card-body-description {
@@ -379,7 +380,7 @@ a.Card.is-active .Card-body-description {
 }
 .content-holder {
   margin: 0 auto;
-  padding: 0;
+  padding: 60px 0;
   z-index: 1;
   height: 100vh;
   overflow: scroll;
