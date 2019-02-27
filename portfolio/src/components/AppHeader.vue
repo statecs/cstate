@@ -5,8 +5,8 @@
       <div class="bar2"></div>
       <div class="bar3"></div>
     </div>-->
-    <!-- <div class="sticky-wrapper">
-      <nav class="subnav">
+    <div class="sticky-wrapper" :style="[scrollPosition > 100 ? {'height':'60px'}: {} ]">
+      <nav class="subnav" :class="{stuck: scrollPosition > 100}">
         <div class="row">
           <ul>
             <li>
@@ -24,7 +24,7 @@
           </ul>
         </div>
       </nav>
-    </div>-->
+    </div>
   </header>
 </template>
 
@@ -40,13 +40,40 @@ export default {
       title: "Featured Projects",
       transitioning: false,
       transitionIndex: null,
-      transitionFixedIndex: null
+      transitionFixedIndex: null,
+      scrollPosition: null
     };
   },
   methods: {
+    updateScroll1() {
+      this.scrollPosition = document.getElementById("scroll-1").scrollTop;
+    },
+    updateScroll2() {
+      this.scrollPosition = document.getElementById("scroll-2").scrollTop;
+    },
+    updateScroll3() {
+      this.scrollPosition = document.getElementById("scroll-3").scrollTop;
+    },
+    updateScroll4() {
+      this.scrollPosition = document.getElementById("scroll-4").scrollTop;
+    },
     myFunction() {
       this.toggled = !this.toggled;
     }
+  },
+  mounted: function() {
+    document
+      .getElementById("scroll-1")
+      .addEventListener("scroll", this.updateScroll1);
+    document
+      .getElementById("scroll-2")
+      .addEventListener("scroll", this.updateScroll2);
+    document
+      .getElementById("scroll-3")
+      .addEventListener("scroll", this.updateScroll3);
+    document
+      .getElementById("scroll-4")
+      .addEventListener("scroll", this.updateScroll4);
   }
 };
 </script>
@@ -93,20 +120,20 @@ a {
 }
 .subnav {
   border-bottom: 1px solid #dbdbdb;
-  padding: 3rem 0;
   background-color: #fff;
 }
 .subnav.stuck {
   animation: b 0.2s ease forwards;
   background-color: #fff;
   border-bottom: none;
-  left: 0;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 88vw;
   z-index: 1000;
   padding-top: 0;
   padding-bottom: 2rem;
+  text-align: center;
+  height: 25px;
 }
 
 .row {

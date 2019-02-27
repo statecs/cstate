@@ -38,11 +38,10 @@
         </div>
         <div v-if="card.description" class="Card-body-description">
           <!-- <div style="overflow:scroll" v-html="card.description"></div>-->
-          <div class="container-fluid content-holder">
+          <div v-bind:id="'scroll-'+card.id" class="container-fluid content-holder">
             <div
               v-on:click.stop
               class="inner-content"
-              id="content-scroll"
               data-position="20vh"
               data-position-expanded="40vh"
             >
@@ -129,6 +128,7 @@ export default {
       transitionFixedIndex: null,
       items: [
         {
+          id: "1",
           message: "Studs - Studieresan",
           title: "Art Director",
           subtitle: "Sketch, InDesign | Summer 2018",
@@ -146,6 +146,7 @@ export default {
           }
         },
         {
+          id: "2",
           message: "Key-experience",
           title: "ME2818 Design Thinking",
           subtitle: "Sketch | February 2019",
@@ -163,6 +164,7 @@ export default {
           }
         },
         {
+          id: "3",
           message: "THS Website",
           title: "UX Developer",
           subtitle: "AngularJS | 2017/2019",
@@ -178,6 +180,7 @@ export default {
           }
         },
         {
+          id: "4",
           message: "CreativeStudio",
           title: "UX Developer",
           subtitle: "HTML5/PHP/Javascript | Summer 2018",
@@ -335,6 +338,10 @@ a.Card.is-active .Card-body-description {
 .Card:active {
   -webkit-transform: scale(0.95);
   transform: scale(0.95);
+}
+.Card-header {
+  display: flex;
+  width: 100%;
 }
 .Card.is-active .Card-header {
   position: fixed;
