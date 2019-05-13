@@ -145,7 +145,7 @@ export default {
               "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
           }
         },
-        {
+        /* {
           id: "2",
           message: "Key-experience",
           title: "ME2818 Design Thinking",
@@ -162,7 +162,7 @@ export default {
             image:
               "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
           }
-        },
+        },*/
         {
           id: "3",
           message: "THS Website",
