@@ -145,26 +145,8 @@ export default {
               "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
           }
         },
-        /* {
-          id: "2",
-          message: "Key-experience",
-          title: "ME2818 Design Thinking",
-          subtitle: "Sketch | February 2019",
-          description: [
-            "<img src='http://cstate.se/assets/Cardinal_screen1.png'>",
-            "<img src='http://cstate.se/assets/Cardinal_screen2.png'>",
-            "<img src='http://cstate.se/assets/Cardinal_screen3.png'>",
-            "<img src='http://cstate.se/assets/Cardinal_screen4.png'>"
-          ],
-          cover: "http://cstate.se/assets/Cardinal_screen5.jpeg",
-          author: {
-            name: "Creativestudio",
-            image:
-              "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-          }
-        },*/
         {
-          id: "3",
+          id: "2",
           message: "THS Website",
           title: "UX Developer",
           subtitle: "AngularJS | 2017/2019",
@@ -180,7 +162,7 @@ export default {
           }
         },
         {
-          id: "4",
+          id: "3",
           message: "CreativeStudio",
           title: "UX Developer",
           subtitle: "HTML5/PHP/Javascript | Summer 2018",
@@ -344,7 +326,6 @@ a.Card.is-active .Card-body-description {
   width: 100%;
 }
 .Card.is-active .Card-header {
-  position: fixed;
   padding: 15px;
 }
 .Card-header-add {
@@ -387,7 +368,7 @@ a.Card.is-active .Card-body-description {
 }
 .content-holder {
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 0;
   z-index: 1;
   height: 100vh;
   overflow: scroll;
@@ -411,7 +392,7 @@ body.mobile-scroll.no-scroll
   div.Card-body-description
   div.container-fluid.content-holder
   div.inner-content {
-  padding: 50px 20px;
+  padding: 10px 20px;
 }
 body.mobile-scroll.no-scroll
   div#app

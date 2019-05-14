@@ -27,6 +27,5 @@ export default {
 body.no-scroll {
   overflow: hidden;
   margin: 0;
-  position: fixed;
 }
 </style>
