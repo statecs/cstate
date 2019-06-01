@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AppList msg="Welcome to Your Vue.js App"/>
+    <AppList msg="Christopher State | UX Developer"/>
   </div>
 </template>
 

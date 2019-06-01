@@ -64,7 +64,7 @@
 
                 <div class="left-first-img container">
                   <img :src="card.cover">
-                  <h1 v-html="card.message">Studs</h1>
+                  <h1 v-html="card.heading"></h1>
                 </div>
                 <div class="details">
                   <div class="list">
@@ -81,6 +81,18 @@
                       <span v-html="card.title"></span>
                     </p>
                     <a v-if="card.url" target="_blank" :href="card.url">Go to project</a>
+                    <p>
+                      <a v-if="card.git" target="_blank" :href="card.git">
+                        <img class="git-logo" src="https://cstate.se/assets/git-logo.png">
+                      </a>
+
+                      <a v-if="card.linkedin" target="_blank" :href="card.linkedin">
+                        <img class="git-logo" src="https://cstate.se/assets/linkedin-logo.png">
+                      </a>
+                      <a v-if="card.cv" target="_blank" :href="card.cv">
+                        <img class="git-logo" src="https://cstate.se/assets/cv-logo8.png">
+                      </a>
+                    </p>
                   </div>
                 </div>
 
@@ -108,7 +120,7 @@
                     <p v-html="item.caption"></p>
                   </div>
 
-                  <div v-if="item.id === 'other'">
+                  <div v-if="item.id === 'other'" class="other">
                     <div v-html="item.html"></div>
                     <p v-html="item.caption"></p>
                   </div>
@@ -188,62 +200,226 @@ export default {
       items: [
         {
           id: "1",
+          message: "Christopher State",
+          heading: "Christopher",
+          title: "UX Developer",
+          subtitle: "Sketch, JavaScript, Accessbility, UX",
+          tech: "Sketch, JavaScript, Accessbility, UX",
+          year: "1993- ",
+          git: "https://github.com/statecs",
+          linkedin: "https://linkedin.com/in/statecs",
+          cv: "https://cstate.se/assets/cv.pdf",
+          description:
+            "Burning passion in creating solutions that makes a difference. I am a highly motivated and enthusiastic student with a genuine interest in web and media technologies. Ever since I learn to code from the age sixteen, I have been driven, curious and spent most of my education career broadening my knowledge. My personal goal include exploring new thinking while pushing the limits of what is possible.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/assets/chris_1.jpg",
+              caption:
+                "Mars 1993 - Present | I have always been interested in new technology. I quickly became the guy who helped friends and friends parents with everything related to IT. These skills helped me make my first money from a young age which kept me motivated. Browsing the internet in order to find solutions become the foundation of my problem solving."
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/assets/kth_first.jpg",
+              caption:
+                "Feb 2015 - Feb 2016 | I worked together with an amazing project team at THS Armada which arranges Scandinavia's largest career fair at KTH Royal Institute of Technology. The role included leading and supporting the developers and the managament team and to build momentum within the group"
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/assets/kth_second.jpg",
+              caption:
+                "Oct 2016 - Present | Traveling around Sweden to represent KTH at fairs, events and high schools. Inform presumptive students about higher education, career options and opportunities after high school in general and KTH in particular."
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/assets/kth_six.jpg",
+              caption: ""
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/assets/kth_eight.jpg",
+              caption:
+                "Jun 2017 - Jun 2018 | Head of Communications at THS, representing students at the Royal Institute of Technology in Stockholm. THS is one of Sweden’s oldest student unions and has over 112 years of experience in working for students’ rights at KTH. "
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/assets/studs_1.jpg",
+              caption:
+                "Oct 2018 - Aug 2018 | Studs, or the Study Trip, is an annual project at the Department of Computer Science at the Royal Institute of Technology (KTH) in Stockholm. The project aims to create a platform for interaction between students close to graduation and relevant companies. The project ends with a study trip to give the students an opportunity to meet companies abroad."
+            },
+            {
+              id: "prototyping",
+              img: "",
+              caption: ""
+            }
+          ],
+          cover: "https://cstate.se/assets/kth_fith.jpg",
+          author: {
+            name: "State",
+            image: ""
+          }
+        },
+        {
+          id: "2",
           message: "Studs - Studieresan",
-          title: "Art Director",
-          subtitle: "Sketch, InDesign | July 2018",
-          tech: "Sketch/ InDesign",
-          year: "July 2018",
+          heading: "Studs",
+          title: "Art Director | Course: AI2151",
+          subtitle: "Sketch, InDesign | Oct 2017 - Aug 2018",
+          tech: "Sketch, InDesign",
+          year: "October 2017 - August 2018",
           url: "https://studieresan.se",
           description:
             "Studs, or the Study Trip, is an annual project at the Department of Computer Science at the Royal Institute of Technology (KTH) in Stockholm. The project aims to create a platform for interaction between students close to graduation and relevant companies. The project ends with a study trip to give the students an opportunity to meet companies abroad. The report itself serves as the major delivery in the course, serving as a record of the project.",
           content: [
             {
               id: "overview",
-              img: "http://cstate.se/assets/studs_cygni.jpg",
-              caption: "Screenshot of the layout of the report."
+              img: "https://cstate.se/assets/studs-inspiration1.jpg",
+              caption: "Moodboard in the first ideation phase."
             },
             {
               id: "field-research",
-              img: "http://cstate.se/assets/studs_kry.jpg",
-              caption: "Screenshot of the layout of the report."
+              img: "https://cstate.se/assets/studs-first1.jpg",
+              caption: "First iteration of the layout."
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/assets/studs_cygni.jpg",
+              caption: "Final layout"
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/assets/studs_kry.jpg",
+              caption: ""
             },
             {
               id: "other",
               html:
-                "<iframe width='100%' height='800px' frameBorder='0' src='https://drive.google.com/file/d/1X8-gNNXPlpWrLF4Uf1I9xj2caoDKi7ws/view?usp=sharing'> ",
-              caption: "Report"
+                "<a style='color: #42b983;' href='https://drive.google.com/file/d/1X8-gNNXPlpWrLF4Uf1I9xj2caoDKi7ws/view?usp=sharing'>Link to report </a> <br /><iframe width='100%' height='800px' frameBorder='0' src='https://drive.google.com/file/d/1X8-gNNXPlpWrLF4Uf1I9xj2caoDKi7ws/view?usp=sharing'> ",
+              caption: ""
             }
           ],
-          cover: "http://cstate.se/assets/studs_screen7.jpg",
+          cover: "https://cstate.se/assets/studs_screen7.jpg",
           author: {
             name: "Studs",
             image: ""
           }
         },
         {
-          id: "2",
+          id: "3",
           message: "THS Website",
+          heading: "THS Web",
           title: "UX Developer",
-          subtitle: "AngularJS | 2017-2018",
-          tech: "Angular/ CSS/ HTML",
-          year: "2017-2019",
+          subtitle: "Angular, WP REST | 2017 - 2019",
+          tech: "Angular, WP REST",
+          year: "2017 - 2018",
           url: "https://ths.kth.se",
+          git: "https://github.com/thskth",
           description:
-            "Responsive Angular 4 Web Application designed to work with the WordPress JSON REST API.",
+            "Rebuilt from scratch using latest technologies in Angular and WP REST. Project with two people where my responsibilities included project lead, UX Design and front-end development. Also, during my year as Head of Communcations I created a new graphical identitiy for THS.",
           content: [
             {
               id: "overview",
-              img: "http://cstate.se/assets/intro_ths.jpg",
-              caption: ""
+              img: "https://cstate.se/assets/intro_ths.jpg",
+              caption: "Updated logo with a more modern look and feeling."
             },
             {
               id: "field-research",
-              img: "http://cstate.se/assets/powerpoint_ths.jpg",
-              caption: ""
+              img: "https://cstate.se/assets/powerpoint_ths.jpg",
+              caption:
+                "New graphical material that follow the graphical identity."
             },
             {
               id: "prototyping",
-              img: "http://cstate.se/assets/ths_desktop_1.jpg",
+              img: "https://cstate.se/assets/screenshot-19-ths.png",
+              caption: "Adaptable homepage depending on your interests."
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/assets/screenshot-18-ths.png",
+              caption:
+                "Chatbot integrated in order to enhance the service from the Student Union Office. "
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/assets/screenshot-21-ths.jpg",
+              caption: "Full-page screenshot"
+            },
+            {
+              id: "other",
+              html: ""
+            }
+          ],
+          cover: "https://cstate.se/assets/ths_screen1.jpg",
+          author: {
+            name: "THS",
+            image: ""
+          }
+        },
+        {
+          id: "4",
+          message: "CreativeStudio",
+          heading: "Creative",
+          title: "UX Developer",
+          subtitle: "Wordpress, Javascript | Aug 2018",
+          tech: "Wordpress, Javascript",
+          year: "August 2018",
+          url: "https://creativestudio.nu",
+          description:
+            "Creative Studio is a family owned studio for children to get acquainted with basic singing techniques, play and sing simpler songs of different music styles.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/assets/creativestudio_screen6.jpg",
+              caption: "Graphical identity and color palette. "
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/assets/creativestudio_screen4.jpg",
+              caption: "Low-fi prototype."
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/assets/creativestudio_screen3.jpg",
+              caption: ""
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/assets/creativestudio_screen2.jpg",
+              caption: "Website developed in Wordpress"
+            }
+          ],
+          cover: "https://cstate.se/assets/creativestudio_screen8.jpg",
+          author: {
+            name: "Creativestudio",
+            image: ""
+          }
+        },
+        {
+          id: "5",
+          message: "Gameful self-directed learning",
+          heading: "Gameful",
+          title: "Designer | Course: DM2799",
+          subtitle: "inVision Studio | Dec 2018",
+          tech: "UI/ UX",
+          year: "December 2018",
+          url: "",
+          description:
+            "This project was developed as part of a collaboration between KTH and Kanda University of International Studies (KUIS) in Japan. The interactive prototype has been created in inVision Studio, using gameful elements categorized into three categories, i.e., objective, progression and feedback. Objective - A behavioral mechanic type, requiring the user to take action for the reward, Progression - Move the user through the content. Feedback - Informing the user of their status.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/assets/gameful_first_1.jpg",
+              caption: "Moodboard in the first ideation phase."
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/assets/gameful_second.jpg",
+              caption:
+                "A prototype for a gameful self-directed learning application developed for Japanese students"
+            },
+            {
+              id: "prototyping",
+              img: "",
               caption: ""
             },
             {
@@ -253,94 +429,11 @@ export default {
             },
             {
               id: "other",
-              html: ""
-            }
-          ],
-          cover: "http://cstate.se/assets/ths_screen1.jpg",
-          author: {
-            name: "THS",
-            image: ""
-          }
-        },
-        {
-          id: "3",
-          message: "CreativeStudio",
-          title: "UX Developer",
-          subtitle: "HTML5/ PHP/ Javascript | August 2018",
-          tech: "Angular/ CSS/ HTML",
-          year: "August 2018",
-          url: "https://creativestudio.nu",
-          description:
-            "Graphical identity and website developed in Wordpress. ",
-          content: [
-            {
-              id: "overview",
-              img: "http://cstate.se/assets/creativestudio_screen6.jpg",
-              caption: ""
-            },
-            {
-              id: "field-research",
-              img: "http://cstate.se/assets/creativestudio_screen4.jpg",
-              caption: ""
-            },
-            {
-              id: "prototyping",
-              img: "http://cstate.se/assets/creativestudio_screen3.jpg",
-              caption: ""
-            },
-            {
-              id: "visual",
-              img: "http://cstate.se/assets/creativestudio_screen2.jpg",
-              caption: ""
-            }
-          ],
-          cover: "http://cstate.se/assets/creativestudio_screen8.jpg",
-          author: {
-            name: "Creativestudio",
-            image: ""
-          }
-        },
-        {
-          id: "4",
-          message: "Gameful self-directed learning",
-          title: "Designer",
-          subtitle: "inVision Studio | December 2018",
-          tech: "UI/ UX",
-          year: "December 2018",
-          url: "",
-          description:
-            "This project was developed as part of a collaboration between KTH and Kanda University of International Studies (KUIS) in Japan. The interactive prototype has been created in inVision Studio, using gameful elements categorized into three categories, i.e., objective, progression and feedback. Objective - A behavioral mechanic type, requiring the user to take action for the reward, Progression - Move the user through the content. Feedback - Informing the user of their status.",
-          content: [
-            {
-              id: "overview",
-              img: "http://cstate.se/assets/gameful_first_1.jpg",
-              caption: "Moodboard of the first ideation phase"
-            },
-            {
-              id: "field-research",
-              img: "http://cstate.se/assets/gameful_second.jpg",
-              caption:
-                "A prototype for a gameful self-directed learning application developed for Japanese students"
-            },
-            {
-              id: "prototyping",
-              img: "http://cstate.se/assets/powerpoint_ths.jpg",
-              caption:
-                "A prototype for a gameful self-directed learning application developed for Japanese students"
-            },
-            {
-              id: "visual",
-              img: "http://cstate.se/assets/ths_desktop_1.jpg",
-              caption:
-                "A prototype for a gameful self-directed learning application developed for Japanese students"
-            },
-            {
-              id: "other",
               html:
                 "<iframe width='100%' height='315' frameBorder='0' src='https://www.youtube.com/embed/PIDCoaKP2hM' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
             }
           ],
-          cover: "http://cstate.se/assets/gameful_screen13.jpg",
+          cover: "https://cstate.se/assets/gameful_screen13.jpg",
           author: {
             name: "KTH",
             image: ""
@@ -436,7 +529,20 @@ button:focus {
     left 520ms ease, right 520ms ease, top 520ms ease, height 520ms ease,
     -webkit-transform 320ms ease 250ms;
 }
+
 .Card:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  transition: height 400ms ease-out 200ms;
+  border-radius: 15px;
+}
+
+/* .Card:after {
   background-color: #fff;
   content: "";
   display: block;
@@ -447,7 +553,7 @@ button:focus {
   height: 0;
   transition: height 400ms ease-out 200ms;
   z-index: -1;
-}
+}*/
 
 .Card.is-active {
   max-width: 100vw;
@@ -488,12 +594,15 @@ a.Card.is-active .Card-body-description {
   text-align: left;
   line-height: 1.7em;
 }
-
+.Card-body {
+  z-index: 1;
+}
 /* .Card:active {
   -webkit-transform: scale(0.95);
   transform: scale(0.95);
 }*/
 .Card-header {
+  z-index: 1;
   display: flex;
   width: 100%;
 }
@@ -551,12 +660,13 @@ a.Card.is-active .Card-body-description {
   margin: 0 auto;
   max-width: 100vw;
   top: 0;
-  padding: 15px;
+  padding: 20px;
   position: relative;
   overflow: scroll;
   z-index: 1;
   background-color: transparent;
   position: relative;
+  overflow-x: hidden;
 }
 
 .inner-content {
@@ -567,6 +677,7 @@ a.Card.is-active .Card-body-description {
 
 .details {
   font-size: 13px;
+  padding-top: 50px;
 }
 
 .details .list p {
@@ -583,13 +694,13 @@ a.Card.is-active .Card-body-description {
   overflow: hidden;
 }
 .left-first-img h1 {
-  margin-left: 15%;
   margin-top: -40px;
-  padding-right: 400px;
-  font-size: 100px;
+  font-size: 80px;
   color: #f3f3f3;
   margin-bottom: 80px;
-  width: 1000%;
+  width: 150%;
+  /* text-align: right;*/
+  position: absolute;
 }
 .container {
   width: 100vw;
@@ -613,13 +724,16 @@ a.Card.is-active .Card-body-description {
 .main-description {
   margin-top: 30px;
 }
+.git-logo {
+  padding: 5px;
+  width: 20px;
+}
 
 @media screen and (min-width: 480px) {
   .left-first-img {
     max-width: 106%;
   }
   .left-first-img h1 {
-    margin-left: 10%;
     margin-top: -50px;
     font-size: 150px;
   }
@@ -628,6 +742,9 @@ a.Card.is-active .Card-body-description {
   }
 }
 @media screen and (min-width: 769px) {
+  .details {
+    padding-top: 150px;
+  }
   .Card.is-active .Card-header {
     padding: 15px;
     justify-content: space-between;
@@ -659,13 +776,13 @@ a.Card.is-active .Card-body-description {
   .main-description {
     float: right;
     max-width: 50%;
-    margin-top: -100px;
+    margin-top: -150px;
   }
 }
 @media screen and (min-width: 1024px) {
   .container-content {
     max-width: 70vw;
-    padding: 50px 100px;
+    padding: 0px 100px;
   }
   .left-first-img img {
     max-height: 800px;
@@ -702,6 +819,10 @@ a.Card.is-active .Card-body-description {
   }
 }
 @media only screen and (min-width: 1920px) {
+  .left-first-img h1 {
+    width: 60%;
+  }
+
   .Card {
     max-width: 65vw;
     /* styles here */
