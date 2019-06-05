@@ -203,49 +203,49 @@ export default {
           message: "Christopher State",
           heading: "Christopher",
           title: "UX Developer",
-          subtitle: "Sketch, JavaScript, Accessbility, UX",
-          tech: "Sketch, JavaScript, Accessbility, UX",
+          subtitle: "Sketch, JavaScript, Accessibility, UX",
+          tech: "Sketch, JavaScript, Accessibility, UX",
           year: "1993- ",
           git: "https://github.com/statecs",
-          linkedin: "https://linkedin.com/in/statecs",
+          linkedin: "https://linkedin.com/in/state",
           cv: "https://cstate.se/assets/cv.pdf",
           description:
             "Burning passion in creating solutions that makes a difference. I am a highly motivated and enthusiastic student with a genuine interest in web and media technologies. Ever since I learn to code from the age sixteen, I have been driven, curious and spent most of my education career broadening my knowledge. My personal goal include exploring new thinking while pushing the limits of what is possible.",
           content: [
             {
               id: "overview",
-              img: "https://cstate.se/assets/chris_1.jpg",
+              img: "https://cstate.se/images/chris-1.jpg",
               caption:
-                "Mars 1993 - Present | I have always been interested in new technology. I quickly became the guy who helped friends and friends parents with everything related to IT. These skills helped me make my first money from a young age which kept me motivated. Browsing the internet in order to find solutions become the foundation of my problem solving."
+                "Sep 2004 - | I have always been interested in new technology. I quickly became the guy who helped friends and friends parents with everything related to IT. These skills helped me make my first money from a young age which kept me motivated. Browsing the internet in order to find solutions become the foundation of my problem solving."
             },
             {
               id: "field-research",
-              img: "https://cstate.se/assets/kth_first.jpg",
+              img: "https://cstate.se/images/chris-2.jpg",
               caption:
                 "Feb 2015 - Feb 2016 | I worked together with an amazing project team at THS Armada which arranges Scandinavia's largest career fair at KTH Royal Institute of Technology. The role included leading and supporting the developers and the managament team and to build momentum within the group"
             },
             {
               id: "prototyping",
-              img: "https://cstate.se/assets/kth_second.jpg",
+              img: "https://cstate.se/images/chris-3.jpg",
               caption:
                 "Oct 2016 - Present | Traveling around Sweden to represent KTH at fairs, events and high schools. Inform presumptive students about higher education, career options and opportunities after high school in general and KTH in particular."
             },
             {
               id: "visual",
-              img: "https://cstate.se/assets/kth_six.jpg",
+              img: "https://cstate.se/images/chris-4.jpg",
               caption: ""
             },
             {
               id: "prototyping",
-              img: "https://cstate.se/assets/kth_eight.jpg",
+              img: "https://cstate.se/images/chris-5.jpg",
               caption:
                 "Jun 2017 - Jun 2018 | Head of Communications at THS, representing students at the Royal Institute of Technology in Stockholm. THS is one of Sweden’s oldest student unions and has over 112 years of experience in working for students’ rights at KTH. "
             },
             {
               id: "visual",
-              img: "https://cstate.se/assets/studs_1.jpg",
+              img: "https://cstate.se/images/chris-6.jpg",
               caption:
-                "Oct 2018 - Aug 2018 | Studs, or the Study Trip, is an annual project at the Department of Computer Science at the Royal Institute of Technology (KTH) in Stockholm. The project aims to create a platform for interaction between students close to graduation and relevant companies. The project ends with a study trip to give the students an opportunity to meet companies abroad."
+                "Oct 2017 - Aug 2018 | Studs, or the Study Trip, is an annual project at the Department of Computer Science at the Royal Institute of Technology (KTH) in Stockholm. The project aims to create a platform for interaction between students close to graduation and relevant companies. The project ends with a study trip to give the students an opportunity to meet companies abroad."
             },
             {
               id: "prototyping",
@@ -253,7 +253,7 @@ export default {
               caption: ""
             }
           ],
-          cover: "https://cstate.se/assets/kth_fith.jpg",
+          cover: "https://cstate.se/images/chris-placeholder.jpg",
           author: {
             name: "State",
             image: ""
@@ -273,22 +273,22 @@ export default {
           content: [
             {
               id: "overview",
-              img: "https://cstate.se/assets/studs-inspiration1.jpg",
+              img: "https://cstate.se/images/studs-1.jpg",
               caption: "Moodboard in the first ideation phase."
             },
             {
               id: "field-research",
-              img: "https://cstate.se/assets/studs-first1.jpg",
+              img: "https://cstate.se/images/studs-2.jpg",
               caption: "First iteration of the layout."
             },
             {
               id: "prototyping",
-              img: "https://cstate.se/assets/studs_cygni.jpg",
+              img: "https://cstate.se/images/studs-3.jpg",
               caption: "Final layout"
             },
             {
               id: "visual",
-              img: "https://cstate.se/assets/studs_kry.jpg",
+              img: "https://cstate.se/images/studs-4.jpg",
               caption: ""
             },
             {
@@ -298,7 +298,7 @@ export default {
               caption: ""
             }
           ],
-          cover: "https://cstate.se/assets/studs_screen7.jpg",
+          cover: "https://cstate.se/images/studs-placeholder.jpg",
           author: {
             name: "Studs",
             image: ""
@@ -311,7 +311,7 @@ export default {
           title: "UX Developer",
           subtitle: "Angular, WP REST | 2017 - 2019",
           tech: "Angular, WP REST",
-          year: "2017 - 2018",
+          year: "2017 - 2019",
           url: "https://ths.kth.se",
           git: "https://github.com/thskth",
           description:
@@ -319,29 +319,39 @@ export default {
           content: [
             {
               id: "overview",
-              img: "https://cstate.se/assets/intro_ths.jpg",
+              img: "https://cstate.se/images/ths-1.jpg",
               caption: "Updated logo with a more modern look and feeling."
             },
             {
               id: "field-research",
-              img: "https://cstate.se/assets/powerpoint_ths.jpg",
+              img: "https://cstate.se/images/ths-2.jpg",
               caption:
                 "New graphical material that follow the graphical identity."
             },
             {
               id: "prototyping",
-              img: "https://cstate.se/assets/screenshot-19-ths.png",
+              img: "https://cstate.se/images/ths-3.jpg",
+              caption: "Sketch mockups on different views (Desktop)"
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/images/ths-4.jpg",
+              caption: "Sketch mockups on different views (Mobile)"
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/ths-5.jpg",
               caption: "Adaptable homepage depending on your interests."
             },
             {
               id: "visual",
-              img: "https://cstate.se/assets/screenshot-18-ths.png",
+              img: "https://cstate.se/images/ths-6.jpg",
               caption:
                 "Chatbot integrated in order to enhance the service from the Student Union Office. "
             },
             {
               id: "prototyping",
-              img: "https://cstate.se/assets/screenshot-21-ths.jpg",
+              img: "https://cstate.se/images/ths-7.jpg",
               caption: "Full-page screenshot"
             },
             {
@@ -349,7 +359,7 @@ export default {
               html: ""
             }
           ],
-          cover: "https://cstate.se/assets/ths_screen1.jpg",
+          cover: "https://cstate.se/images/ths-placeholder.jpg",
           author: {
             name: "THS",
             image: ""
@@ -369,26 +379,26 @@ export default {
           content: [
             {
               id: "overview",
-              img: "https://cstate.se/assets/creativestudio_screen6.jpg",
+              img: "https://cstate.se/images/creativestudio-1.jpg",
               caption: "Graphical identity and color palette. "
             },
             {
               id: "field-research",
-              img: "https://cstate.se/assets/creativestudio_screen4.jpg",
+              img: "https://cstate.se/images/creativestudio-2.jpg",
               caption: "Low-fi prototype."
             },
             {
               id: "prototyping",
-              img: "https://cstate.se/assets/creativestudio_screen3.jpg",
+              img: "https://cstate.se/images/creativestudio-3.jpg",
               caption: ""
             },
             {
               id: "visual",
-              img: "https://cstate.se/assets/creativestudio_screen2.jpg",
+              img: "https://cstate.se/images/creativestudio-4.jpg",
               caption: "Website developed in Wordpress"
             }
           ],
-          cover: "https://cstate.se/assets/creativestudio_screen8.jpg",
+          cover: "https://cstate.se/images/creativestudio-placeholder.jpg",
           author: {
             name: "Creativestudio",
             image: ""
@@ -408,12 +418,12 @@ export default {
           content: [
             {
               id: "overview",
-              img: "https://cstate.se/assets/gameful_first_1.jpg",
+              img: "https://cstate.se/images/gameful-1.jpg",
               caption: "Moodboard in the first ideation phase."
             },
             {
               id: "field-research",
-              img: "https://cstate.se/assets/gameful_second.jpg",
+              img: "https://cstate.se/images/gameful-2.jpg",
               caption:
                 "A prototype for a gameful self-directed learning application developed for Japanese students"
             },
@@ -433,7 +443,7 @@ export default {
                 "<iframe width='100%' height='315' frameBorder='0' src='https://www.youtube.com/embed/PIDCoaKP2hM' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
             }
           ],
-          cover: "https://cstate.se/assets/gameful_screen13.jpg",
+          cover: "https://cstate.se/images/gameful-placeholder.jpg",
           author: {
             name: "KTH",
             image: ""
@@ -714,7 +724,7 @@ a.Card.is-active .Card-body-description {
   max-width: 100%;
 }
 .right-img {
-  text-align: right;
+  text-align: left;
   padding-top: 50px;
   padding-bottom: 70px;
 }
@@ -767,7 +777,7 @@ a.Card.is-active .Card-body-description {
     font-size: 1.3em;
   }
   .left-first-img h1 {
-    font-size: 250px;
+    font-size: 180px;
     margin-bottom: 150px;
   }
   .Card.is-active .Card-header {
@@ -788,6 +798,7 @@ a.Card.is-active .Card-body-description {
     max-height: 800px;
   }
   .left-first-img h1 {
+    font-size: 200px;
     margin-bottom: 170px;
   }
   .Card.is-active .Card-header-add {
@@ -798,6 +809,12 @@ a.Card.is-active .Card-body-description {
   .Card.is-active .PlusIcon:after {
     height: 20px;
     margin: 7px 0px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .left-first-img h1 {
+    font-size: 250px;
+    margin-bottom: 170px;
   }
 }
 @media only screen and (min-width: 1440px) {
