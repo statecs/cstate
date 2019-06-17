@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AppList msg="Christopher State | UX Developer"/>
+    <AppList msg="Christopher State | UX Engineer"/>
   </div>
 </template>
 
