@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AppList msg="Welcome to Your Vue.js App"/>
+    <AppList msg="Christopher State | Design Technologist"/>
   </div>
 </template>
 
@@ -22,10 +22,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 body.no-scroll {
   overflow: hidden;
   margin: 0;
+}
+@media screen and (min-width: 768px) {
+  #app {
+    margin-top: 40px;
+  }
 }
 </style>

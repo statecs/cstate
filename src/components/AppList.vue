@@ -38,27 +38,98 @@
         </div>
         <div v-if="card.description" class="Card-body-description">
           <!-- <div style="overflow:scroll" v-html="card.description"></div>-->
-          <div v-bind:id="'scroll-'+card.id" class="container-fluid content-holder">
+          <div class="container-fluid content-holder">
             <div
+              v-bind:id="'scroll-'+card.id"
               v-on:click.stop
               class="inner-content"
               data-position="20vh"
               data-position-expanded="40vh"
             >
               <AppHeader v-if="transitionIndex !== null && transitioning"/>
-              <div class="info-holder">
-                <div class="like-wrapper btn-liked">
-                  <i class="fa fa-heart fa-lg"></i>
-                  <span class="count"></span>
+
+              <div class="container-content">
+                <div class="info-holder">
+                  <div class="like-wrapper btn-liked">
+                    <i class="fa fa-heart fa-lg"></i>
+                    <span class="count"></span>
+                  </div>
+                  <div class="bookmark-wrapper btn-bookmark">
+                    <i class="fa fa-bookmark-o fa-lg"></i>
+                  </div>
                 </div>
-                <div class="bookmark-wrapper btn-bookmark">
-                  <i class="fa fa-bookmark-o fa-lg"></i>
+
+                <!--<h2 class="title" v-html="card.title"></h2>
+                <h2 class="title" v-html="card.subtitle"></h2>-->
+
+                <div class="left-first-img container">
+                  <img :src="card.cover">
+                  <h1 v-html="card.heading"></h1>
                 </div>
-              </div>
-              <!--<h2 class="title" v-html="card.title"></h2>
-              <h2 class="title" v-html="card.subtitle"></h2>-->
-              <div v-for="item in card.description" :key="item">
-                <div v-html="item"></div>
+                <div class="details">
+                  <div class="list">
+                    <p>
+                      Year:
+                      <span v-html="card.year"></span>
+                    </p>
+                    <p>
+                      Tech:
+                      <span v-html="card.tech"></span>
+                    </p>
+                    <p>
+                      Role:
+                      <span v-html="card.title"></span>
+                    </p>
+                    <a v-if="card.url" target="_blank" :href="card.url">Go to project</a>
+                    <p>
+                      <a v-if="card.git" target="_blank" :href="card.git">
+                        <img class="git-logo" src="https://cstate.se/assets/git-logo.png">
+                      </a>
+
+                      <a v-if="card.linkedin" target="_blank" :href="card.linkedin">
+                        <img class="git-logo" src="https://cstate.se/assets/linkedin-logo.png">
+                      </a>
+                      <a v-if="card.cv" target="_blank" :href="card.cv">
+                        <img class="git-logo" src="https://cstate.se/assets/cv-logo8.png">
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="main-description">
+                  <p v-html="card.description"></p>
+                </div>
+                <div v-for="item in card.content">
+                  <div v-if="item.id === 'overview'" class="right-img">
+                    <img :src="item.img">
+                    <p v-html="item.caption"></p>
+                  </div>
+
+                  <div v-if="item.id === 'field-research'" class="left-img">
+                    <img :src="item.img">
+                    <p v-html="item.caption"></p>
+                  </div>
+
+                  <div v-if="item.id === 'prototyping'" class="right-img">
+                    <img :src="item.img">
+                    <p v-html="item.caption"></p>
+                  </div>
+
+                  <div v-if="item.id === 'visual'" class="left-img">
+                    <img :src="item.img">
+                    <p v-html="item.caption"></p>
+                  </div>
+
+                  <div v-if="item.id === 'other'" class="other">
+                    <div v-html="item.html"></div>
+                    <p v-html="item.caption"></p>
+                  </div>
+                  <div v-if="item.id === 'other'" class="right-img">
+                    <img :src="item.img">
+                  </div>
+
+                  <!--<div :id="item.id" v-html="item.content"></div>-->
+                </div>
               </div>
             </div>
           </div>
@@ -129,54 +200,253 @@ export default {
       items: [
         {
           id: "1",
-          message: "Studs - Studieresan",
-          title: "Art Director",
-          subtitle: "Sketch, InDesign | Summer 2018",
-          description: [
-            "<img width='100%' src='http://cstate.se/assets/studs_screen4.jpg'>",
-            "<img width='100%' src='http://cstate.se/assets/studs_screen2.jpg'>",
-            "<img width='100%' src='http://cstate.se/assets/studs_screen5.jpg'>",
-            "<iframe width='100%' height='800px' src='https://drive.google.com/file/d/1X8-gNNXPlpWrLF4Uf1I9xj2caoDKi7ws/view?usp=sharing'>"
+          message: "Christopher State",
+          heading: "Christopher",
+          title: "Design Technologist",
+          subtitle: "Sketch, JavaScript, Accessibility, UX",
+          tech: "Sketch, JavaScript, Accessibility, UX",
+          year: "1993- ",
+          git: "https://github.com/statecs",
+          linkedin: "https://linkedin.com/in/state",
+          cv: "https://cstate.se/assets/cv.pdf",
+          description:
+            "Burning passion in creating solutions that makes a difference. I am a highly motivated and enthusiastic student with a genuine interest in web and media technologies. Ever since I learn to code from the age sixteen, I have been driven, curious and spent most of my education career broadening my knowledge. My personal goal include exploring new thinking while pushing the limits of what is possible.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/images/chris-1.jpg",
+              caption:
+                "Sep 2004 - | I have always been interested in new technology. I quickly became the guy who helped friends and friends parents with everything related to IT. These skills helped me make my first money from a young age which kept me motivated. Browsing the internet in order to find solutions become the foundation of my problem solving."
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/images/chris-2.jpg",
+              caption:
+                "Feb 2015 - Feb 2016 | I worked together with an amazing project team at THS Armada which arranges Scandinavia's largest career fair at KTH Royal Institute of Technology. The role included leading and supporting the developers and the managament team and to build momentum within the group"
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/chris-3.jpg",
+              caption:
+                "Oct 2016 - Present | Traveling around Sweden to represent KTH at fairs, events and high schools. Inform presumptive students about higher education, career options and opportunities after high school in general and KTH in particular."
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/images/chris-4.jpg",
+              caption: ""
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/chris-5.jpg",
+              caption:
+                "Jun 2017 - Jun 2018 | Head of Communications at THS, representing students at the Royal Institute of Technology in Stockholm. THS is one of Sweden’s oldest student unions and has over 112 years of experience in working for students’ rights at KTH. "
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/images/chris-6.jpg",
+              caption:
+                "Oct 2017 - Aug 2018 | Studs, or the Study Trip, is an annual project at the Department of Computer Science at the Royal Institute of Technology (KTH) in Stockholm. The project aims to create a platform for interaction between students close to graduation and relevant companies. The project ends with a study trip to give the students an opportunity to meet companies abroad."
+            },
+            {
+              id: "prototyping",
+              img: "",
+              caption: ""
+            }
           ],
-          cover: "http://cstate.se/assets/studs_screen1.jpg",
+          cover: "https://cstate.se/images/chris-placeholder.jpg",
           author: {
-            name: "Creativestudio",
-            image:
-              "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+            name: "State",
+            image: ""
           }
         },
         {
           id: "2",
-          message: "THS Website",
-          title: "UX Developer",
-          subtitle: "AngularJS | 2017/2019",
-          description: [
-            "<a href='https://kths.se/'>Link to website</a>",
-            "<img width='100%' src='http://cstate.se/assets/ths_screen6.png'>"
+          message: "Studs - Studieresan",
+          heading: "Studs",
+          title: "Art Director | Course: AI2151",
+          subtitle: "Sketch, InDesign | Oct 2017 - Aug 2018",
+          tech: "Sketch, InDesign",
+          year: "October 2017 - August 2018",
+          url: "https://studieresan.se",
+          description:
+            "Studs, or the Study Trip, is an annual project at the Department of Computer Science at the Royal Institute of Technology (KTH) in Stockholm. The project aims to create a platform for interaction between students close to graduation and relevant companies. The project ends with a study trip to give the students an opportunity to meet companies abroad. The report itself serves as the major delivery in the course, serving as a record of the project.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/images/studs-1.jpg",
+              caption: "Moodboard in the first ideation phase."
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/images/studs-2.jpg",
+              caption: "First iteration of the layout."
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/studs-3.jpg",
+              caption: "Final layout"
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/images/studs-4.jpg",
+              caption: ""
+            },
+            {
+              id: "other",
+              html:
+                "<a style='color: #42b983;' href='https://drive.google.com/file/d/1X8-gNNXPlpWrLF4Uf1I9xj2caoDKi7ws/view?usp=sharing'>Link to report </a> <br /><iframe width='100%' height='800px' frameBorder='0' src='https://drive.google.com/file/d/1X8-gNNXPlpWrLF4Uf1I9xj2caoDKi7ws/view?usp=sharing'> ",
+              caption: ""
+            }
           ],
-          cover: "http://cstate.se/assets/ths_screen1.jpg",
+          cover: "https://cstate.se/images/studs-placeholder.jpg",
           author: {
-            name: "Malcom Fox",
-            image:
-              "https://pbs.twimg.com/profile_images/565258371092070400/kbW-3WU0.jpeg"
+            name: "Studs",
+            image: ""
           }
         },
         {
           id: "3",
-          message: "CreativeStudio",
-          title: "UX Developer",
-          subtitle: "HTML5/PHP/Javascript | Summer 2018",
-          description: [
-            "<img width='100%' src='http://cstate.se/assets/creativestudio_screen6.jpg'>",
-            "<img width='100%' src='http://cstate.se/assets/creativestudio_screen4.jpg'>",
-            "<img width='100%' src='http://cstate.se/assets/creativestudio_screen3.jpg'>",
-            "<img width='100%' src='http://cstate.se/assets/creativestudio_screen2.jpg'>"
+          message: "THS Website",
+          heading: "THS Web",
+          title: "Front-end Developer",
+          subtitle: "Angular, WP REST | 2017 - 2019",
+          tech: "Angular, WP REST",
+          year: "2017 - 2019",
+          url: "https://ths.kth.se",
+          git: "https://github.com/thskth",
+          description:
+            "Rebuilt from scratch using latest technologies in Angular and WP REST. Project with two people where my responsibilities included project lead, UX Design and front-end development. Also, during my year as Head of Communcations I created a new graphical identitiy for THS.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/images/ths-1.jpg",
+              caption: "Updated logo with a more modern look and feeling."
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/images/ths-2.jpg",
+              caption:
+                "New graphical material that follow the graphical identity."
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/ths-3.jpg",
+              caption: "Sketch mockups on different views (Desktop)"
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/images/ths-4.jpg",
+              caption: "Sketch mockups on different views (Mobile)"
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/ths-5.jpg",
+              caption: "Adaptable homepage depending on your interests."
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/images/ths-6.jpg",
+              caption:
+                "Chatbot integrated in order to enhance the service from the Student Union Office. "
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/ths-7.jpg",
+              caption: "Full-page screenshot"
+            },
+            {
+              id: "other",
+              html: ""
+            }
           ],
-          cover: "http://cstate.se/assets/creativestudio_screen8.jpg",
+          cover: "https://cstate.se/images/ths-placeholder.jpg",
+          author: {
+            name: "THS",
+            image: ""
+          }
+        },
+        {
+          id: "4",
+          message: "CreativeStudio",
+          heading: "Creative",
+          title: "UX Designer",
+          subtitle: "Wordpress, Javascript | Aug 2018",
+          tech: "Wordpress, Javascript",
+          year: "August 2018",
+          url: "https://creativestudio.nu",
+          description:
+            "Creative Studio is a family owned studio for children to get acquainted with basic singing techniques, play and sing simpler songs of different music styles.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/images/creativestudio-1.jpg",
+              caption: "Graphical identity and color palette. "
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/images/creativestudio-2.jpg",
+              caption: "Low-fi prototype."
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/creativestudio-3.jpg",
+              caption: ""
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/images/creativestudio-4.jpg",
+              caption: "Website developed in Wordpress"
+            }
+          ],
+          cover: "https://cstate.se/images/creativestudio-placeholder.jpg",
           author: {
             name: "Creativestudio",
-            image:
-              "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+            image: ""
+          }
+        },
+        {
+          id: "5",
+          message: "Gameful self-directed learning",
+          heading: "Gameful",
+          title: "Designer | Course: DM2799",
+          subtitle: "inVision Studio | Dec 2018",
+          tech: "UI/ UX",
+          year: "December 2018",
+          url: "",
+          description:
+            "This project was developed as part of a collaboration between KTH and Kanda University of International Studies (KUIS) in Japan. The interactive prototype has been created in inVision Studio, using gameful elements categorized into three categories, i.e., objective, progression and feedback. Objective - A behavioral mechanic type, requiring the user to take action for the reward, Progression - Move the user through the content. Feedback - Informing the user of their status.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/images/gameful-1.jpg",
+              caption: "Moodboard in the first ideation phase."
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/images/gameful-2.jpg",
+              caption:
+                "A prototype for a gameful self-directed learning application developed for Japanese students"
+            },
+            {
+              id: "prototyping",
+              img: "",
+              caption: ""
+            },
+            {
+              id: "visual",
+              img: "",
+              caption: ""
+            },
+            {
+              id: "other",
+              html:
+                "<iframe width='100%' height='315' frameBorder='0' src='https://www.youtube.com/embed/PIDCoaKP2hM' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+            }
+          ],
+          cover: "https://cstate.se/images/gameful-placeholder.jpg",
+          author: {
+            name: "KTH",
+            image: ""
           }
         }
       ]
@@ -241,6 +511,7 @@ button:focus {
   -webkit-transform: translate(-50%, -50%) rotate(90deg);
   transform: translate(-50%, -50%) rotate(90deg);
 }
+
 .Card {
   box-shadow: 0 23px 7px -21px rgba(0, 0, 0, 0.5);
   background-color: black;
@@ -249,11 +520,12 @@ button:focus {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  margin: 20px;
   padding: 15px;
   position: relative;
   min-height: 460px;
   background-size: cover;
+  max-width: 100vw;
+  margin: 20px auto;
   text-decoration: none;
   transition: margin-left 120ms ease, margin-right 120ms ease,
     margin-top 120ms ease, border-radius 120ms ease, left 520ms ease,
@@ -267,7 +539,20 @@ button:focus {
     left 520ms ease, right 520ms ease, top 520ms ease, height 520ms ease,
     -webkit-transform 320ms ease 250ms;
 }
+
 .Card:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  transition: height 400ms ease-out 200ms;
+  border-radius: 15px;
+}
+
+/* .Card:after {
   background-color: #fff;
   content: "";
   display: block;
@@ -278,10 +563,11 @@ button:focus {
   height: 0;
   transition: height 400ms ease-out 200ms;
   z-index: -1;
-}
+}*/
 
 .Card.is-active {
-  margin: 0px;
+  max-width: 100vw;
+  margin: 0px auto;
   -webkit-overflow-scrolling: touch;
   bottom: 0;
   left: 0;
@@ -290,6 +576,8 @@ button:focus {
   padding: 0;
   z-index: 9999;
   min-height: 100vh;
+  border-radius: 0px;
+  background-image: none !important;
 }
 body.mobile-scroll.no-scroll div#app div.hello section a.Card.is-active {
   height: 100vh;
@@ -312,21 +600,26 @@ a.Card.is-active .Card-body-description {
   transform: scale(1);
   padding-top: 0;
   z-index: 999;
-  color: black;
+  color: white;
   text-align: left;
   line-height: 1.7em;
 }
-
-.Card:active {
+.Card-body {
+  z-index: 1;
+}
+/* .Card:active {
   -webkit-transform: scale(0.95);
   transform: scale(0.95);
-}
+}*/
 .Card-header {
+  z-index: 1;
   display: flex;
   width: 100%;
 }
 .Card.is-active .Card-header {
   padding: 15px;
+  justify-content: flex-end;
+  margin-left: -30px;
 }
 .Card-header-add {
   background-color: #fff;
@@ -337,18 +630,11 @@ a.Card.is-active .Card-body-description {
   transition: transform 200ms ease 500ms;
   transition: transform 200ms ease 500ms, -webkit-transform 200ms ease 500ms;
 }
+
 .Card-body-title {
   text-align: center;
 }
-@media screen and (min-width: 768px) {
-  .Card-body-title {
-    text-align: center;
-    font-size: 1.3em;
-  }
-  a.Card.is-active .Card-body-description {
-    padding: 0 60px;
-  }
-}
+
 .Card-body-description {
   opacity: 0;
   height: 0;
@@ -370,49 +656,196 @@ a.Card.is-active .Card-body-description {
   margin: 0 auto;
   padding: 0;
   z-index: 1;
-  height: 100vh;
-  overflow: scroll;
   background-color: transparent;
   position: relative;
 }
 
+.container-content {
+  margin: 0 auto;
+}
+
 .inner-content {
+  height: 100vh;
+  overflow: scroll;
   margin: 0 auto;
   max-width: 100vw;
   top: 0;
-  padding: 50px;
+  padding: 20px;
   position: relative;
   overflow: scroll;
-  background-color: #fff;
+  z-index: 1;
+  background-color: transparent;
+  position: relative;
+  overflow-x: hidden;
 }
-body.mobile-scroll.no-scroll
-  div#app
-  section
-  a.Card.is-active
-  div.Card-body-description
-  div.container-fluid.content-holder
-  div.inner-content {
-  padding: 10px 20px;
-}
-body.mobile-scroll.no-scroll
-  div#app
-  section
-  a.Card.is-active
-  div.Card-body-description
-  div.container-fluid.content-holder
-  div.inner-content
-  div
-  div
-  img {
-  width: 300px;
-  max-width: 100%;
-}
+
 .inner-content {
   padding-bottom: env(safe-area-inset-bottom); /* for iPhone X */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.inner-content div div img {
-  max-width: 300px;
+
+.details {
+  font-size: 13px;
+  padding-top: 50px;
+}
+
+.details .list p {
+  padding: 0;
+  margin: 0;
+}
+
+.left-img {
+  text-align: left;
+}
+.left-first-img {
+  max-width: 103%;
+  overflow-x: hidden;
+  overflow: hidden;
+}
+.left-first-img h1 {
+  margin-top: -40px;
+  font-size: 80px;
+  color: #f3f3f3;
+  margin-bottom: 80px;
+  width: 150%;
+  /* text-align: right;*/
+  position: absolute;
+}
+.container {
+  width: 100vw;
+}
+.left-first-img img {
+  max-height: 400px;
+  width: 95%;
+  object-fit: cover;
+}
+.left-img img {
+  max-width: 100%;
+}
+.right-img {
+  text-align: left;
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+.right-img img {
+  max-width: 100%;
+}
+.main-description {
+  margin-top: 30px;
+}
+.git-logo {
+  padding: 5px;
+  width: 20px;
+}
+
+@media screen and (min-width: 480px) {
+  .left-first-img {
+    max-width: 106%;
+  }
+  .left-first-img h1 {
+    margin-top: -50px;
+    font-size: 150px;
+  }
+  .inner-content {
+    padding: 0 50px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .details {
+    padding-top: 150px;
+  }
+  .Card.is-active .Card-header {
+    padding: 15px;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+
+  .right-img {
+    text-align: right;
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+  .left-img img {
+    max-width: 700px;
+  }
+  .right-img img {
+    max-width: 700px;
+  }
+  .Card-body-title {
+    text-align: center;
+    font-size: 1.3em;
+  }
+  .left-first-img h1 {
+    font-size: 180px;
+    margin-bottom: 150px;
+  }
+  .Card.is-active .Card-header {
+    padding: 30px;
+  }
+  .main-description {
+    float: right;
+    max-width: 50%;
+    margin-top: -150px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container-content {
+    max-width: 70vw;
+    padding: 0px 100px;
+  }
+  .left-first-img img {
+    max-height: 800px;
+  }
+  .left-first-img h1 {
+    font-size: 200px;
+    margin-bottom: 170px;
+  }
+  .Card.is-active .Card-header-add {
+    width: 48px;
+    height: 48px;
+  }
+  .Card.is-active .PlusIcon:before,
+  .Card.is-active .PlusIcon:after {
+    height: 20px;
+    margin: 7px 0px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .left-first-img h1 {
+    font-size: 250px;
+    margin-bottom: 170px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .Card {
+    max-width: 70vw;
+    /* styles here */
+  }
+  .container-content {
+    max-width: 60vw;
+    padding: 50px 100px;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .right-img img {
+    max-width: 900px;
+  }
+  .left-img img {
+    max-width: 900px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .left-first-img h1 {
+    width: 60%;
+  }
+
+  .Card {
+    max-width: 65vw;
+    /* styles here */
+  }
+  .container-content {
+    max-width: 50vw;
+  }
 }
 </style>

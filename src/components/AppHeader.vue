@@ -5,7 +5,7 @@
       <div class="bar2"></div>
       <div class="bar3"></div>
     </div>-->
-    <div class="sticky-wrapper" :style="[scrollPosition > 100 ? {'height':'60px'}: {} ]">
+    <!--<div class="sticky-wrapper" :style="[scrollPosition > 100 ? {'height':'60px'}: {} ]">
       <nav class="subnav" :class="{stuck: scrollPosition > 100}">
         <div class="row">
           <ul>
@@ -16,15 +16,15 @@
               <a href="#field-research" class="anchor_link active">Field Research</a>
             </li>
             <li>
-              <a href="#engagement-strategy" class="anchor_link">Prototyping</a>
+              <a href="#prototyping" class="anchor_link">Prototyping</a>
             </li>
             <li>
-              <a href="#visual-program" class="anchor_link">Visual Design</a>
+              <a href="#visual" class="anchor_link">Visual Design</a>
             </li>
           </ul>
         </div>
       </nav>
-    </div>
+    </div>-->
   </header>
 </template>
 
@@ -54,9 +54,6 @@ export default {
     updateScroll3() {
       this.scrollPosition = document.getElementById("scroll-3").scrollTop;
     },
-    updateScroll4() {
-      this.scrollPosition = document.getElementById("scroll-4").scrollTop;
-    },
     myFunction() {
       this.toggled = !this.toggled;
     }
@@ -71,9 +68,6 @@ export default {
     document
       .getElementById("scroll-3")
       .addEventListener("scroll", this.updateScroll3);
-    document
-      .getElementById("scroll-4")
-      .addEventListener("scroll", this.updateScroll4);
   }
 };
 </script>
@@ -92,7 +86,8 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  text-decoration: none;
+  color: #428db9;
 }
 
 .bar1,
@@ -119,6 +114,7 @@ a {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 .subnav {
+  text-align: center;
   border-bottom: 1px solid #dbdbdb;
   background-color: #fff;
 }
@@ -134,6 +130,8 @@ a {
   padding-bottom: 2rem;
   text-align: center;
   height: 25px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .row {
