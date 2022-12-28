@@ -112,6 +112,9 @@
                     </p>
                     <a v-if="card.url" target="_blank" :href="card.url">Go to project</a>
                     <p>
+                      <a v-if="card.figma" target="_blank" :href="card.figma">
+                        <img class="git-logo" src="https://cstate.se/assets/figma-logo.png" />
+                      </a>
                       <a v-if="card.git" target="_blank" :href="card.git">
                         <img class="git-logo" src="https://cstate.se/assets/git-logo.png" />
                       </a>
@@ -413,8 +416,8 @@ export default {
           message: "Christopher State",
           heading: "Christopher",
           title: "Design Technologist",
-          subtitle: "Sketch, JavaScript, Accessibility, UX",
-          tech: "Sketch, JavaScript, Accessibility, UX",
+          subtitle: "Accessibility, UX, Figma, JavaScript",
+          tech: "Accessibility, UX, Figma, JavaScript",
           year: "1993- ",
           git: "https://github.com/statecs",
           linkedin: "https://linkedin.com/in/state",
@@ -471,16 +474,132 @@ export default {
         },
         {
           id: "2",
-          message: "Conversational interfaces in digital healthcare",
-          heading: "Symtomguiden ",
+          message: "ICA",
+          heading: "ICA",
+          title: "UX/UI Designer | ICA Gruppen AB",
+          subtitle: "Figma, Accessibility | Mar 2022 - Present",
+          tech: "Figma, Accessibility",
+          year: "March 2022 - Present",
+          url: "https://docs.google.com/presentation/d/1YoiQnn62IJwq0lRxo3YPTXf4kWqJLRsXmlOPXd4DXA4/edit?usp=sharing",
+          description:
+            "With great commitment and the latest technology, we develop better solutions to improve the everyday life of all our customers.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/images/ica-1.jpg",
+              caption:
+                "Color palette for the new design"
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/images/ica-2.jpg",
+              caption:
+                "Typography"
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/ica-3.jpg",
+              caption:
+                "Resuable components built in Figma"
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/images/ica-4.jpg",
+              caption:
+                "Mobile sketches for the intranet for ICA.se"
+            },
+            {
+              id: "prototyping",
+              img: "",
+              caption: ""
+            }
+          ],
+          cover: "https://cstate.se/images/ica-placeholder-1.jpg",
+          author: {
+            name: "ica",
+            image: ""
+          }
+        },
+        {
+          id: "3",
+          message: "Mapiful",
+          heading: "Mapiful",
+          title: "UX Developer | Mapiful",
+          subtitle: "Vue, Wordpress, Figma | Jan 2021 - Mar 2022",
+          tech: "Vue, Wordpress, Figma",
+          year: "January 2021 - March 2022",
+          url: "https://www.mapiful.com/",
+          figma: "https://www.figma.com/file/N7g4rP7M9kWoqm2A6QcBJd/Mapiful?node-id=1347%3A813",
+          description:
+            "Mapiful provides the technology to let you choose from any place in the world and design your own unique map print. Explore, zoom, customize and order. Voila, your place of birth, favorite neighborhood or just your happy place framed on your wall, in your home. Making sure the UX is top-notch on the site, identifying pain points and easy-wins, looking through support tickets, and investigating any potential issues on the site. Product/front-end development, working closely with the product team, adding new features to the editors, sourcing new illustrations to line-art editors, and other front-end development tasks of the site.",
+          content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/images/mapiful-1.jpg",
+              caption:
+                "Responsible for Figma, components, and brand colors of Mapiful."
+            },
+            {
+              id: "field-research",
+              img: "https://cstate.se/images/mapiful-2.jpg",
+              caption:
+                "Responsible for Figma, components, and brand colors of Mapiful. "
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/mapiful-3.jpg",
+              caption:
+                "Inspirational moodboard for the redesign of the website"
+            },
+            {
+              id: "visual",
+              img: "https://cstate.se/images/mapiful-5.jpg",
+              caption:
+                "Hero design"
+            },
+            {
+              id: "prototyping",
+              img: "https://cstate.se/images/mapiful-7.jpg",
+              caption: "Final design of the frontpage"
+            },
+            {
+              id: "visual",
+              img: "",
+              caption:
+                ""
+            },
+          ],
+          cover: "https://cstate.se/images/mapiful-placeholder-2.jpg",
+          author: {
+            name: "mapiful",
+            image: ""
+          }
+        },
+        {
+          id: "4",
+          message: "Designing Conversational AI in digital healthcare in regards to accessibility",
+          heading: "AI Chatbot",
           title: "Master Thesis | Course: DA232X",
           subtitle: "React, Python, Sketch | Jan 2020 - Jun 2020",
           tech: "React, Python, Sketch",
           year: "January 2020 - June 2020",
-          url: "https://symtomguiden.nu",
+          url: "https://docs.google.com/presentation/d/1HkI-JAr0iQPheC5lUyoevX6McbsQLt3Cu7HGFTdvoKU/edit?usp=sharing",
+          git: "https://github.com/statecs/aida",
           description:
             "A prototype was designed and built using ReactJs together with Python using Rasa - Natural Language Understanding. Several a11y-tools for accessibility were used while building the prototype. The accessibility tools included screen readers, and different a11y tools integrated in visual studio code. The prototype was also evaluated in regards to the ISO Standard 21801-1:2020 – Cognitive Accessibility",
           content: [
+            {
+              id: "overview",
+              img: "https://cstate.se/images/exjobb-0_1.jpg",
+              caption:
+                  "Chatbots only know limited answers. They may not always be the best approach but they can answer basic questions which is very helpful. In cases when the chatbot is unaware of an answer, it should redirect to a real doctor."
+            },  
+            {
+              id: "field-research",
+              img: "https://cstate.se/images/exjobb-0_2.jpg",
+              caption:
+                  "BankID was one of the biggest limitations today, because people with disabilities often need a god man, which is not accepted by BankID."
+            }, 
             {
               id: "overview",
               img: "https://cstate.se/images/exjobb-1_1.jpg",
@@ -503,7 +622,7 @@ export default {
               id: "visual",
               img: "https://cstate.se/images/exjobb-4_1.jpg",
               caption:
-                "Final version developed in React <a href='https://symtomguiden.nu'>Link to prototype.</a>"
+                "Final version developed in React"
             },
             {
               id: "prototyping",
@@ -511,14 +630,14 @@ export default {
               caption: ""
             }
           ],
-          cover: "https://cstate.se/images/exjobb-placeholder-2.jpg",
+          cover: "https://cstate.se/images/exjobb-placeholder-5.jpg",
           author: {
-            name: "Studs",
+            name: "exjobb",
             image: ""
           }
         },
         {
-          id: "3",
+          id: "5",
           message: "Studs - Studieresan",
           heading: "Studs",
           title: "Art Director | Course: AI2151",
@@ -563,7 +682,7 @@ export default {
           }
         },
         {
-          id: "4",
+          id: "6",
           message: "THS Website",
           heading: "THS Web",
           title: "Front-end Developer",
@@ -624,14 +743,14 @@ export default {
           }
         },
         {
-          id: "5",
+          id: "7",
           message: "CreativeStudio",
           heading: "Creative",
           title: "UX Designer",
           subtitle: "Wordpress, Javascript | Aug 2018",
           tech: "Wordpress, Javascript",
           year: "August 2018",
-          url: "https://creativestudio.nu",
+          url: "",
           description:
             "Creative Studio is a family owned studio for children to get acquainted with basic singing techniques, play and sing simpler songs of different music styles.",
           content: [
@@ -663,14 +782,14 @@ export default {
           }
         },
         {
-          id: "6",
+          id: "8",
           message: "Gameful self-directed learning",
           heading: "Gameful",
           title: "Designer | Course: DM2799",
           subtitle: "inVision Studio | Dec 2018",
           tech: "UI/ UX",
           year: "December 2018",
-          url: "",
+          url: "https://docs.google.com/presentation/d/1aWkK7eQPUrD8E7QbS86UjRM04wc1XqolpaQ4Ir0T3Ds/edit?usp=sharing",
           description:
             "This project was developed as part of a collaboration between KTH and Kanda University of International Studies (KUIS) in Japan. The interactive prototype has been created in inVision Studio, using gameful elements categorized into three categories, i.e., objective, progression and feedback. Objective - A behavioral mechanic type, requiring the user to take action for the reward, Progression - Move the user through the content. Feedback - Informing the user of their status.",
           content: [
