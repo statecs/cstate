@@ -1,0 +1,387 @@
+{
+  "showProjects":false,
+  "toggled":false,
+  "title":"Featured Articles",
+  "transitioning":false,
+  "transitionIndex":null,
+  "transitionFixedIndex":null,
+  "items":[
+     {
+        "id":"1",
+        "message":"Christopher State",
+        "heading":"Christopher",
+        "title":"Design Technologist",
+        "subtitle":"Accessibility, UX, Figma, JavaScript",
+        "tech":"Accessibility, UX, Figma, JavaScript",
+        "year":"1993- ",
+        "git":"https://github.com/statecs",
+        "linkedin":"https://linkedin.com/in/state",
+        "cv":"https://cstate.se/assets/cv.pdf",
+        "description":"Burning passion in creating solutions that makes a difference. I am a highly motivated and enthusiastic student with a genuine interest in web and media technologies. Ever since I learn to code from the age sixteen, I have been driven, curious and spent most of my education career broadening my knowledge. My personal goal include exploring new thinking while pushing the limits of what is possible.",
+        "content":[
+           {
+              "id":"overview",
+              "img":"https://cstate.se/images/chris-1.jpg",
+              "caption":"Sep 2004 | I have always been interested in new technology. I quickly became the guy who helped friends and friends parents with everything related to IT. These skills helped me make my first money from a young age which kept me motivated. Browsing the internet in order to find solutions become the foundation of my problem solving."
+           },
+           {
+              "id":"field-research",
+              "img":"https://cstate.se/images/chris-2.jpg",
+              "caption":"Feb 2015 - Feb 2016 | I worked together with an amazing project team at THS Armada which arranges Scandinavia's largest career fair at KTH Royal Institute of Technology. The role included leading and supporting the developers and the managament team and to build momentum within the group"
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/chris-3.jpg",
+              "caption":"Oct 2016 - Aug 2019 | Traveling around Sweden to represent KTH at fairs, events and high schools. Inform presumptive students about higher education, career options and opportunities after high school in general and KTH in particular."
+           },
+           {
+              "id":"visual",
+              "img":"https://cstate.se/images/chris-4.jpg",
+              "caption":""
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/chris-5.jpg",
+              "caption":"Jun 2017 - Jun 2018 | Head of Communications at THS, representing students at the Royal Institute of Technology in Stockholm. THS is one of Sweden’s oldest student unions and has over 112 years of experience in working for students’ rights at KTH. "
+           },
+           {
+              "id":"visual",
+              "img":"https://cstate.se/images/chris-6.jpg",
+              "caption":"Oct 2017 - Aug 2018 | Studs, or the Study Trip, is an annual project at the Department of Computer Science at the Royal Institute of Technology (KTH) in Stockholm. The project aims to create a platform for interaction between students close to graduation and relevant companies. The project ends with a study trip to give the students an opportunity to meet companies abroad."
+           },
+           {
+              "id":"prototyping",
+              "img":"",
+              "caption":""
+           }
+        ],
+        "cover":"https://cstate.se/images/chris-placeholder.jpg",
+        "author":{
+           "name":"State",
+           "image":""
+        }
+     },
+     {
+        "id":"2",
+        "message":"ICA",
+        "heading":"ICA",
+        "title":"UX/UI Designer | ICA Gruppen AB",
+        "subtitle":"Figma, Accessibility | Mar 2022 - Present",
+        "tech":"Figma, Accessibility",
+        "year":"March 2022 - Present",
+        "url":"https://docs.google.com/presentation/d/1YoiQnn62IJwq0lRxo3YPTXf4kWqJLRsXmlOPXd4DXA4/edit?usp=sharing",
+        "description":"With great commitment and the latest technology, we develop better solutions to improve the everyday life of all our customers.",
+        "content":[
+           {
+              "id":"overview",
+              "img":"https://cstate.se/images/ica-1.jpg",
+              "caption":"Color palette for the new design"
+           },
+           {
+              "id":"field-research",
+              "img":"https://cstate.se/images/ica-2.jpg",
+              "caption":"Typography"
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/ica-3.jpg",
+              "caption":"Resuable components built in Figma"
+           },
+           {
+              "id":"visual",
+              "img":"https://cstate.se/images/ica-4.jpg",
+              "caption":"Mobile sketches for the intranet for ICA.se"
+           },
+           {
+              "id":"prototyping",
+              "img":"",
+              "caption":""
+           }
+        ],
+        "cover":"https://cstate.se/images/ica-placeholder-1.jpg",
+        "author":{
+           "name":"ica",
+           "image":""
+        }
+     },
+     {
+        "id":"3",
+        "message":"Mapiful",
+        "heading":"Mapiful",
+        "title":"UX Developer | Mapiful",
+        "subtitle":"Vue, Wordpress, Figma | Jan 2021 - Mar 2022",
+        "tech":"Vue, Wordpress, Figma",
+        "year":"January 2021 - March 2022",
+        "url":"https://www.mapiful.com/",
+        "figma":"https://www.figma.com/file/N7g4rP7M9kWoqm2A6QcBJd/Mapiful?node-id=1347%3A813",
+        "description":"Mapiful provides the technology to let you choose from any place in the world and design your own unique map print. Explore, zoom, customize and order. Voila, your place of birth, favorite neighborhood or just your happy place framed on your wall, in your home. Making sure the UX is top-notch on the site, identifying pain points and easy-wins, looking through support tickets, and investigating any potential issues on the site. Product/front-end development, working closely with the product team, adding new features to the editors, sourcing new illustrations to line-art editors, and other front-end development tasks of the site.",
+        "content":[
+           {
+              "id":"overview",
+              "img":"https://cstate.se/images/mapiful-1.jpg",
+              "caption":"Responsible for Figma, components, and brand colors of Mapiful."
+           },
+           {
+              "id":"field-research",
+              "img":"https://cstate.se/images/mapiful-2.jpg",
+              "caption":"Responsible for Figma, components, and brand colors of Mapiful. "
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/mapiful-3.jpg",
+              "caption":"Inspirational moodboard for the redesign of the website"
+           },
+           {
+              "id":"visual",
+              "img":"https://cstate.se/images/mapiful-5.jpg",
+              "caption":"Hero design"
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/mapiful-7.jpg",
+              "caption":"Final design of the frontpage"
+           }
+        ],
+        "cover":"https://cstate.se/images/mapiful-placeholder-2.jpg",
+        "author":{
+           "name":"mapiful",
+           "image":""
+        }
+     },
+     {
+        "id":"4",
+        "message":"Designing Conversational AI in digital healthcare in regards to accessibility",
+        "heading":"AI Chatbot",
+        "title":"Master Thesis | Course: DA232X",
+        "subtitle":"React, Python, Sketch | Jan 2020 - Jun 2020",
+        "tech":"React, Python, Sketch",
+        "year":"January 2020 - June 2020",
+        "url":"https://docs.google.com/presentation/d/1HkI-JAr0iQPheC5lUyoevX6McbsQLt3Cu7HGFTdvoKU/edit?usp=sharing",
+        "git":"https://github.com/statecs/aida",
+        "description":"A prototype was designed and built using ReactJs together with Python using Rasa - Natural Language Understanding. Several a11y-tools for accessibility were used while building the prototype. The accessibility tools included screen readers, and different a11y tools integrated in visual studio code. The prototype was also evaluated in regards to the ISO Standard 21801-1:2020 – Cognitive Accessibility",
+        "content":[
+           {
+              "id":"overview",
+              "img":"https://cstate.se/images/exjobb-0_1.jpg",
+              "caption":"Chatbots only know limited answers. They may not always be the best approach but they can answer basic questions which is very helpful. In cases when the chatbot is unaware of an answer, it should redirect to a real doctor."
+           },
+           {
+              "id":"field-research",
+              "img":"https://cstate.se/images/exjobb-0_2.jpg",
+              "caption":"BankID was one of the biggest limitations today, because people with disabilities often need a god man, which is not accepted by BankID."
+           },
+           {
+              "id":"overview",
+              "img":"https://cstate.se/images/exjobb-1_1.jpg",
+              "caption":"Moodboard in the first ideation phase. Keywords: Online symtom checkers, digital health chatbots and accessibility."
+           },
+           {
+              "id":"field-research",
+              "img":"https://cstate.se/images/exjobb-2_1.jpg",
+              "caption":"Sketching on the first iteration of the prototype based on the moodboard and inspiration from Typeform and other digital health chatbots."
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/exjobb-3_1.jpg",
+              "caption":"Prototype made in Framer X and tested together with Begripsam in order to evaluate ISO Standard 21801-1:2020 – Cognitive Accessibility"
+           },
+           {
+              "id":"visual",
+              "img":"https://cstate.se/images/exjobb-4_1.jpg",
+              "caption":"Final version developed in React"
+           },
+           {
+              "id":"prototyping",
+              "img":"",
+              "caption":""
+           }
+        ],
+        "cover":"https://cstate.se/images/exjobb-placeholder-5.jpg",
+        "author":{
+           "name":"exjobb",
+           "image":""
+        }
+     },
+     {
+        "id":"5",
+        "message":"Studs - Studieresan",
+        "heading":"Studs",
+        "title":"Art Director | Course: AI2151",
+        "subtitle":"Sketch, InDesign | Oct 2017 - Aug 2018",
+        "tech":"Sketch, InDesign",
+        "year":"October 2017 - August 2018",
+        "url":"https://studieresan.se",
+        "description":"Studs, or the Study Trip, is an annual project at the Department of Computer Science at the Royal Institute of Technology (KTH) in Stockholm. The project aims to create a platform for interaction between students close to graduation and relevant companies. The project ends with a study trip to give the students an opportunity to meet companies abroad. The report itself serves as the major delivery in the course, serving as a record of the project.",
+        "content":[
+           {
+              "id":"overview",
+              "img":"https://cstate.se/images/studs-1.jpg",
+              "caption":"Moodboard in the first ideation phase."
+           },
+           {
+              "id":"field-research",
+              "img":"https://cstate.se/images/studs-2.jpg",
+              "caption":"First iteration of the layout."
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/studs-3.jpg",
+              "caption":"Final layout"
+           },
+           {
+              "id":"visual",
+              "img":"https://cstate.se/images/studs-4.jpg",
+              "caption":""
+           },
+           {
+              "id":"other",
+              "html":"<br /><a style='color: #42b983;' href='https://drive.google.com/file/d/1X8-gNNXPlpWrLF4Uf1I9xj2caoDKi7ws/view?usp=sharing'>Link to report </a> <br />",
+              "caption":""
+           }
+        ],
+        "cover":"https://cstate.se/images/studs-placeholder.jpg",
+        "author":{
+           "name":"Studs",
+           "image":""
+        }
+     },
+     {
+        "id":"6",
+        "message":"THS Website",
+        "heading":"THS Web",
+        "title":"Front-end Developer",
+        "subtitle":"Angular, WP REST | 2017 - 2019",
+        "tech":"Angular, WP REST",
+        "year":"2017 - 2019",
+        "url":"https://ths.kth.se",
+        "git":"https://github.com/thskth",
+        "description":"Rebuilt from scratch using latest technologies in Angular and WP REST. Project with two people where my responsibilities included project lead, UX Design and front-end development. Also, during my year as Head of Communcations I created a new graphical identitiy for THS.",
+        "content":[
+           {
+              "id":"overview",
+              "img":"https://cstate.se/images/ths-1.jpg",
+              "caption":"Updated logo with a more modern look and feeling."
+           },
+           {
+              "id":"field-research",
+              "img":"https://cstate.se/images/ths-2.jpg",
+              "caption":"New graphical material that follow the graphical identity."
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/ths-3.jpg",
+              "caption":"Sketch mockups on different views (Desktop)"
+           },
+           {
+              "id":"visual",
+              "img":"https://cstate.se/images/ths-4.jpg",
+              "caption":"Sketch mockups on different views (Mobile)"
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/ths-5.jpg",
+              "caption":"Adaptable homepage depending on your interests."
+           },
+           {
+              "id":"visual",
+              "img":"https://cstate.se/images/ths-6.jpg",
+              "caption":"Chatbot integrated in order to enhance the service from the Student Union Office. "
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/ths-7.jpg",
+              "caption":"Full-page screenshot"
+           },
+           {
+              "id":"other",
+              "html":""
+           }
+        ],
+        "cover":"https://cstate.se/images/ths-placeholder.jpg",
+        "author":{
+           "name":"THS",
+           "image":""
+        }
+     },
+     {
+        "id":"7",
+        "message":"CreativeStudio",
+        "heading":"Creative",
+        "title":"UX Designer",
+        "subtitle":"Wordpress, Javascript | Aug 2018",
+        "tech":"Wordpress, Javascript",
+        "year":"August 2018",
+        "url":"",
+        "description":"Creative Studio is a family owned studio for children to get acquainted with basic singing techniques, play and sing simpler songs of different music styles.",
+        "content":[
+           {
+              "id":"overview",
+              "img":"https://cstate.se/images/creativestudio-1.jpg",
+              "caption":"Graphical identity and color palette. "
+           },
+           {
+              "id":"field-research",
+              "img":"https://cstate.se/images/creativestudio-2.jpg",
+              "caption":"Low-fi prototype."
+           },
+           {
+              "id":"prototyping",
+              "img":"https://cstate.se/images/creativestudio-3.jpg",
+              "caption":""
+           },
+           {
+              "id":"visual",
+              "img":"https://cstate.se/images/creativestudio-4.jpg",
+              "caption":"Website developed in Wordpress"
+           }
+        ],
+        "cover":"https://cstate.se/images/creativestudio-placeholder.jpg",
+        "author":{
+           "name":"Creativestudio",
+           "image":""
+        }
+     },
+     {
+        "id":"8",
+        "message":"Gameful self-directed learning",
+        "heading":"Gameful",
+        "title":"Designer | Course: DM2799",
+        "subtitle":"inVision Studio | Dec 2018",
+        "tech":"UI/ UX",
+        "year":"December 2018",
+        "url":"https://docs.google.com/presentation/d/1aWkK7eQPUrD8E7QbS86UjRM04wc1XqolpaQ4Ir0T3Ds/edit?usp=sharing",
+        "description":"This project was developed as part of a collaboration between KTH and Kanda University of International Studies (KUIS) in Japan. The interactive prototype has been created in inVision Studio, using gameful elements categorized into three categories, i.e., objective, progression and feedback. Objective - A behavioral mechanic type, requiring the user to take action for the reward, Progression - Move the user through the content. Feedback - Informing the user of their status.",
+        "content":[
+           {
+              "id":"overview",
+              "img":"https://cstate.se/images/gameful-1.jpg",
+              "caption":"Moodboard in the first ideation phase."
+           },
+           {
+              "id":"field-research",
+              "img":"https://cstate.se/images/gameful-2.jpg",
+              "caption":"A prototype for a gameful self-directed learning application developed for Japanese students"
+           },
+           {
+              "id":"prototyping",
+              "img":"",
+              "caption":""
+           },
+           {
+              "id":"visual",
+              "img":"",
+              "caption":""
+           },
+           {
+              "id":"other",
+              "html":"<iframe width='100%' height='315' frameBorder='0' src='https://www.youtube.com/embed/PIDCoaKP2hM' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+           }
+        ],
+        "cover":"https://cstate.se/images/gameful-placeholder.jpg",
+        "author":{
+           "name":"KTH",
+           "image":""
+        }
+     }
+  ]
+}
