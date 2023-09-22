@@ -93,7 +93,7 @@
                 <h2 class="title" v-html="card.subtitle"></h2>-->
 
                 <div class="left-first-img container">
-                  <img :src="card.cover" />
+                  <img :src="card.cover" alt="Image">
                   <h1 v-html="card.heading"></h1>
                 </div>
                 <div class="details">
@@ -110,20 +110,20 @@
                       Role:
                       <span v-html="card.title"></span>
                     </p>
-                    <a v-if="card.url" target="_blank" :href="card.url">Go to project</a>
+                    <a v-if="card.url" target="_blank" :href="card.url" aria-label="Opens the project a new tab">Go to project</a>
                     <p>
-                      <a v-if="card.figma" target="_blank" :href="card.figma">
-                        <img class="git-logo" src="https://cstate.se/assets/figma-logo.png" />
+                      <a v-if="card.figma" target="_blank" :href="card.figma" aria-label="Opens Figma a new tab">
+                        <img class="git-logo" src="https://cstate.se/assets/figma-logo.png" alt="Image">
                       </a>
-                      <a v-if="card.git" target="_blank" :href="card.git">
-                        <img class="git-logo" src="https://cstate.se/assets/git-logo.png" />
+                      <a v-if="card.git" target="_blank" :href="card.git" aria-label="Opens Github a new tab">
+                        <img class="git-logo" src="https://cstate.se/assets/git-logo.png" alt="Image">
                       </a>
 
-                      <a v-if="card.linkedin" target="_blank" :href="card.linkedin">
-                        <img class="git-logo" src="https://cstate.se/assets/linkedin-logo.png" />
+                      <a v-if="card.linkedin" target="_blank" :href="card.linkedin" aria-label="Opens LinkedIn a new tab">
+                        <img class="git-logo" src="https://cstate.se/assets/linkedin-logo.png" alt="Image">
                       </a>
-                      <a v-if="card.cv" target="_blank" :href="card.cv">
-                        <img class="git-logo" src="https://cstate.se/assets/cv-logo8.png" />
+                      <a v-if="card.cv" target="_blank" :href="card.cv" aria-label="Opens CV a new tab">
+                        <img class="git-logo" src="https://cstate.se/assets/cv-logo8.png" alt="Image">
                       </a>
                     </p>
                   </div>
@@ -134,22 +134,22 @@
                 </div>
                 <div v-for="item in card.content">
                   <div v-if="item.id === 'overview'" class="right-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                     <p v-html="item.caption"></p>
                   </div>
 
                   <div v-if="item.id === 'field-research'" class="left-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                     <p v-html="item.caption"></p>
                   </div>
 
                   <div v-if="item.id === 'prototyping'" class="right-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                     <p v-html="item.caption"></p>
                   </div>
 
                   <div v-if="item.id === 'visual'" class="left-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                     <p v-html="item.caption"></p>
                   </div>
 
@@ -158,7 +158,7 @@
                     <p v-html="item.caption"></p>
                   </div>
                   <div v-if="item.id === 'other'" class="right-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                   </div>
 
                   <!--<div :id="item.id" v-html="item.content"></div>-->
@@ -229,7 +229,7 @@
                 <h2 class="title" v-html="card.subtitle"></h2>-->
 
                 <div class="left-first-img container">
-                  <img :src="card.cover" />
+                  <img :src="card.cover" :alt="card.heading">
                   <h1 v-html="card.heading"></h1>
                 </div>
                 <div class="details">
@@ -246,17 +246,17 @@
                       Role:
                       <span v-html="card.title"></span>
                     </p>
-                    <a v-if="card.url" target="_blank" :href="card.url">Go to project</a>
+                    <a v-if="card.url" target="_blank" :href="card.url" aria-label="Opens hte project a new tab">Go to project</a>
                     <p>
-                      <a v-if="card.git" target="_blank" :href="card.git">
-                        <img class="git-logo" src="https://cstate.se/assets/git-logo.png" />
+                      <a v-if="card.git" target="_blank" :href="card.git" aria-label="Opens Github a new tab">
+                        <img class="git-logo" src="https://cstate.se/assets/git-logo.png" alt="Github">
                       </a>
 
-                      <a v-if="card.linkedin" target="_blank" :href="card.linkedin">
-                        <img class="git-logo" src="https://cstate.se/assets/linkedin-logo.png" />
+                      <a v-if="card.linkedin" target="_blank" :href="card.linkedin" aria-label="Opens Linkedin a new tab">
+                        <img class="git-logo" src="https://cstate.se/assets/linkedin-logo.png" alt="Linkedin">
                       </a>
-                      <a v-if="card.cv" target="_blank" :href="card.cv">
-                        <img class="git-logo" src="https://cstate.se/assets/cv-logo8.png" />
+                      <a v-if="card.cv" target="_blank" :href="card.cv" aria-label="Opens CV a new tab">
+                        <img class="git-logo" src="https://cstate.se/assets/cv-logo8.png" alt="CV">
                       </a>
                     </p>
                   </div>
@@ -267,22 +267,22 @@
                 </div>
                 <div v-for="item in card.content">
                   <div v-if="item.id === 'overview'" class="right-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                     <p v-html="item.caption"></p>
                   </div>
 
                   <div v-if="item.id === 'field-research'" class="left-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                     <p v-html="item.caption"></p>
                   </div>
 
                   <div v-if="item.id === 'prototyping'" class="right-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                     <p v-html="item.caption"></p>
                   </div>
 
                   <div v-if="item.id === 'visual'" class="left-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                     <p v-html="item.caption"></p>
                   </div>
 
@@ -291,7 +291,7 @@
                     <p v-html="item.caption"></p>
                   </div>
                   <div v-if="item.id === 'other'" class="right-img">
-                    <img :src="item.img" />
+                    <img :src="item.img" :alt="item.caption">
                   </div>
 
                   <!--<div :id="item.id" v-html="item.content"></div>-->
@@ -863,7 +863,7 @@ button {
   border: none;
 }
 button:focus {
-  outline: none;
+  outline: 2px solid #42b983;  /* Custom focus indicator for buttons */
 }
 
 .PlusIcon {
@@ -1262,4 +1262,8 @@ a.Card.is-active .Card-body-description {
     max-width: 50vw;
   }
 }
+[role="button"]:focus {
+  outline: 2px solid #42b983;  /* Custom focus indicator for elements acting as buttons */
+}
+
 </style>
