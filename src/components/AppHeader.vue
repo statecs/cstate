@@ -1,46 +1,14 @@
 <template>
   <header v-on:click.stop class="AppHeader" v-bind:class="{ 'is-removed' : transitioning }">
-    <!-- <div :class="['container', { 'change': toggled }]" @click="myFunction">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>-->
-    <!--<div class="sticky-wrapper" :style="[scrollPosition > 100 ? {'height':'60px'}: {} ]">
-      <nav class="subnav" :class="{stuck: scrollPosition > 100}">
-        <div class="row">
-          <ul>
-            <li>
-              <a href="#overview" class="anchor_link">Overview</a>
-            </li>
-            <li>
-              <a href="#field-research" class="anchor_link active">Field Research</a>
-            </li>
-            <li>
-              <a href="#prototyping" class="anchor_link">Prototyping</a>
-            </li>
-            <li>
-              <a href="#visual" class="anchor_link">Visual Design</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>-->
   </header>
 </template>
 
 <script>
 export default {
   name: "AppHeader",
-  props: {
-    msg: String
-  },
   data: function() {
     return {
-      toggled: false,
-      title: "Featured Projects",
       transitioning: false,
-      transitionIndex: null,
-      transitionFixedIndex: null,
       scrollPosition: null
     };
   },
@@ -53,9 +21,6 @@ export default {
     },
     updateScroll3() {
       this.scrollPosition = document.getElementById("scroll-3").scrollTop;
-    },
-    myFunction() {
-      this.toggled = !this.toggled;
     }
   },
   mounted: function() {
@@ -71,72 +36,3 @@ export default {
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  text-decoration: none;
-  color: #428db9;
-}
-
-.bar1,
-.bar2,
-.bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .bar2 {
-  opacity: 0;
-}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-}
-.subnav {
-  text-align: center;
-  border-bottom: 1px solid #dbdbdb;
-  background-color: #fff;
-}
-.subnav.stuck {
-  animation: b 0.2s ease forwards;
-  background-color: #fff;
-  border-bottom: none;
-  position: fixed;
-  top: 0;
-  width: 88vw;
-  z-index: 1000;
-  padding-top: 0;
-  padding-bottom: 2rem;
-  text-align: center;
-  height: 25px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.row {
-  max-width: 1300px;
-  margin-right: auto;
-  margin-left: auto;
-}
-</style>
