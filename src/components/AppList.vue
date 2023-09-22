@@ -36,27 +36,27 @@
     <section v-if="showProjects">
       <a
         href="#"
-        class="Card"
+        class="card-item"
         v-for="(card,index) in items"
         v-if="index >= 1"
         :key="index.id"
         v-bind:style="{ 'background-image': 'url(' + card.cover + ')' }"
-        v-on:click.prevent="transitionToFull($event, index)"
+        v-on:click.prevent="expandCard($event, index)"
         v-bind:class="{
                       'is-active': transitionIndex === index && transitioning
                      }"
       >
-        <header class="Card-header">
-          <div class="Card-header-add">
+        <header class="card-item-header">
+          <div class="card-item-header-add">
             <button type="button">
-              <button type="button" class="PlusIcon"></button>
+              <button type="button" class="plus-icon"></button>
             </button>
           </div>
         </header>
-        <div class="Card-body">
-          <div class="Card-body-title">
+        <div class="card-item-body">
+          <div class="card-item-body-title">
             <h2>{{ card.message }}</h2>
-            <p v-if="card.description" class="Card-body-description">
+            <p v-if="card.description" class="card-item-body-description">
               <!-- {{ card.description }}-->
             </p>
             <div>
@@ -66,7 +66,7 @@
             </div>
           </div>
         </div>
-        <div v-if="card.description" class="Card-body-description">
+        <div v-if="card.description" class="card-item-body-description">
           <!-- <div style="overflow:scroll" v-html="card.description"></div>-->
           <div class="container-fluid content-holder">
             <div
@@ -79,12 +79,12 @@
               <AppHeader v-if="transitionIndex !== null && transitioning" />
 
               <div class="container-content">
-                <div class="info-holder">
-                  <div class="like-wrapper btn-liked">
+                <div class="card-info">
+                  <div class="like-button btn-liked">
                     <i class="fa fa-heart fa-lg"></i>
                     <span class="count"></span>
                   </div>
-                  <div class="bookmark-wrapper btn-bookmark">
+                  <div class="bookmark-button btn-bookmark">
                     <i class="fa fa-bookmark-o fa-lg"></i>
                   </div>
                 </div>
@@ -172,27 +172,27 @@
     <section v-else>
       <a
         href="#"
-        class="Card"
+        class="card-item"
         v-for="(card,index) in items"
         v-if="index <= 0"
         :key="index.id"
         v-bind:style="{ 'background-image': 'url(' + card.cover + ')' }"
-        v-on:click.prevent="transitionToFull($event, index)"
+        v-on:click.prevent="expandCard($event, index)"
         v-bind:class="{
                       'is-active': transitionIndex === index && transitioning
                      }"
       >
-        <header class="Card-header">
-          <div class="Card-header-add">
+        <header class="card-item-header">
+          <div class="card-item-header-add">
             <button type="button">
-              <button type="button" class="PlusIcon"></button>
+              <button type="button" class="plus-icon"></button>
             </button>
           </div>
         </header>
-        <div class="Card-body">
-          <div class="Card-body-title">
+        <div class="card-item-body">
+          <div class="card-item-body-title">
             <h2>{{ card.message }}</h2>
-            <p v-if="card.description" class="Card-body-description">
+            <p v-if="card.description" class="card-item-body-description">
               <!-- {{ card.description }}-->
             </p>
             <div>
@@ -202,7 +202,7 @@
             </div>
           </div>
         </div>
-        <div v-if="card.description" class="Card-body-description">
+        <div v-if="card.description" class="card-item-body-description">
           <!-- <div style="overflow:scroll" v-html="card.description"></div>-->
           <div class="container-fluid content-holder">
             <div
@@ -215,12 +215,12 @@
               <AppHeader v-if="transitionIndex !== null && transitioning" />
 
               <div class="container-content">
-                <div class="info-holder">
-                  <div class="like-wrapper btn-liked">
+                <div class="card-info">
+                  <div class="like-button btn-liked">
                     <i class="fa fa-heart fa-lg"></i>
                     <span class="count"></span>
                   </div>
-                  <div class="bookmark-wrapper btn-bookmark">
+                  <div class="bookmark-button btn-bookmark">
                     <i class="fa fa-bookmark-o fa-lg"></i>
                   </div>
                 </div>
@@ -362,22 +362,20 @@ export default {
   components: {
     AppHeader
   },
-  methods: {
-    transitionToFull: function(event, index) {
+  computed: {
+    isMobileDevice() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+    }
+  },
+
+methods: {
+    expandCard: function(event, index) {
       var el = event.currentTarget; //target;
       var body = document.body;
       //var distanceToTop = Math.abs(el.getBoundingClientRect().top);
       //console.log(distanceToTop);
       if (
-        !(
-          navigator.userAgent.match(/Android/i) ||
-          navigator.userAgent.match(/webOS/i) ||
-          navigator.userAgent.match(/iPhone/i) ||
-          navigator.userAgent.match(/iPad/i) ||
-          navigator.userAgent.match(/iPod/i) ||
-          navigator.userAgent.match(/BlackBerry/i) ||
-          navigator.userAgent.match(/Windows Phone/i)
-        )
+        !this.isMobileDevice
       ) {
         var distanceToTop = el.getBoundingClientRect().top;
         distanceToTop = -1 * distanceToTop;
@@ -832,438 +830,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.AppList {
-  margin: 0 auto;
-}
-
-.no-scroll .app-popup-window {
-  position: fixed;
-  z-index: 1;
-}
-
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-button {
-  padding: 0;
-  background: none;
-  border: none;
-}
-button:focus {
-  outline: 2px solid #42b983;  /* Custom focus indicator for buttons */
-}
-
-.PlusIcon {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.PlusIcon:before,
-.PlusIcon:after {
-  content: "";
-  display: block;
-  width: 2px;
-  height: 16px;
-  background-color: currentColor;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.PlusIcon:after {
-  -webkit-transform: translate(-50%, -50%) rotate(90deg);
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.Card {
-  box-shadow: 0 23px 7px -21px rgba(0, 0, 0, 0.5);
-  background-color: black;
-  background-position: center center;
-  color: white;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  position: relative;
-  min-height: 460px;
-  background-size: cover;
-  max-width: 100vw;
-  margin: 20px auto;
-  text-decoration: none;
-  transition: margin-left 120ms ease, margin-right 120ms ease,
-    margin-top 120ms ease, border-radius 120ms ease, left 520ms ease,
-    right 520ms ease, top 520ms ease, height 520ms ease,
-    -webkit-transform 320ms ease 250ms;
-  transition: transform 320ms ease 250ms, margin-left 120ms ease,
-    margin-right 120ms ease, margin-top 120ms ease, border-radius 120ms ease,
-    left 520ms ease, right 520ms ease, top 520ms ease, height 520ms ease;
-  transition: transform 320ms ease 250ms, margin-left 120ms ease,
-    margin-right 120ms ease, margin-top 120ms ease, border-radius 120ms ease,
-    left 520ms ease, right 520ms ease, top 520ms ease, height 520ms ease,
-    -webkit-transform 320ms ease 250ms;
-}
-
-.Card:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.15);
-  transition: height 400ms ease-out 200ms;
-  border-radius: 15px;
-}
-
-/* .Card:after {
-  background-color: #fff;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 0;
-  transition: height 400ms ease-out 200ms;
-  z-index: -1;
-}*/
-
-.Card.is-active {
-  max-width: 100vw;
-  margin: 0px auto;
-  -webkit-overflow-scrolling: touch;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  padding: 0;
-  z-index: 9999;
-  min-height: 100vh;
-  border-radius: 0px;
-  background-image: none !important;
-}
-body.mobile-scroll.no-scroll div#app div.hello section a.Card.is-active {
-  height: 100vh;
-  position: fixed;
-}
-a.Card .Card-body-description {
-  overflow: hidden;
-}
-a.Card.is-active .Card-body-description {
-  overflow: visible;
-}
-
-.Card.is-active .Card-header-add {
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-}
-.Card.is-active .Card-body-description {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  padding-top: 0;
-  z-index: 999;
-  color: white;
-  text-align: left;
-  line-height: 1.7em;
-}
-.Card-body {
-  z-index: 1;
-}
-/* .Card:active {
-  -webkit-transform: scale(0.95);
-  transform: scale(0.95);
-}*/
-.Card-header {
-  z-index: 1;
-  display: flex;
-  width: 100%;
-}
-.Card.is-active .Card-header {
-  padding: 15px;
-  justify-content: flex-end;
-  margin-left: -30px;
-}
-.Card-header-add {
-  background-color: #fff;
-  border-radius: 100%;
-  width: 32px;
-  height: 32px;
-  transition: -webkit-transform 200ms ease 500ms;
-  transition: transform 200ms ease 500ms;
-  transition: transform 200ms ease 500ms, -webkit-transform 200ms ease 500ms;
-}
-
-.Card-body-title {
-  text-align: center;
-}
-
-.Card-body-description {
-  opacity: 0;
-  height: 0;
-  -webkit-transform: translate(0, 5px) scale(0.85);
-  transform: translate(0, 5px) scale(0.85);
-  transition: opacity 200ms ease 200ms, height 200ms ease 200ms,
-    -webkit-transform 200ms ease 200ms;
-  transition: transform 200ms ease 200ms, opacity 200ms ease 200ms,
-    height 200ms ease 200ms;
-  transition: transform 200ms ease 200ms, opacity 200ms ease 200ms,
-    height 200ms ease 200ms, -webkit-transform 200ms ease 200ms;
-}
-
-/** **/
-.Card.is-active .Card-body {
-  display: none;
-}
-.content-holder {
-  margin: 0 auto;
-  padding: 0;
-  z-index: 1;
-  background-color: transparent;
-  position: relative;
-}
-
-.container-content {
-  margin: 0 auto;
-}
-
-.inner-content {
-  height: 100vh;
-  overflow: scroll;
-  margin: 0 auto;
-  max-width: 100vw;
-  top: 0;
-  padding: 20px;
-  position: relative;
-  overflow: scroll;
-  z-index: 1;
-  background-color: transparent;
-  position: relative;
-  overflow-x: hidden;
-}
-
-.inner-content {
-  padding-bottom: env(safe-area-inset-bottom); /* for iPhone X */
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.details {
-  font-size: 13px;
-  padding-top: 50px;
-}
-
-.details .list p {
-  padding: 0;
-  margin: 0;
-}
-
-.left-img {
-  text-align: left;
-}
-.left-first-img {
-  max-width: 103%;
-  overflow-x: hidden;
-  overflow: hidden;
-}
-.left-first-img h1 {
-  margin-top: -40px;
-  font-size: 80px;
-  color: #f3f3f3;
-  margin-bottom: 80px;
-  width: 150%;
-  /* text-align: right;*/
-  position: absolute;
-}
-.container {
-  width: 100vw;
-}
-.left-first-img img {
-  max-height: 400px;
-  width: 95%;
-  object-fit: cover;
-}
-.left-img img {
-  max-width: 100%;
-}
-.right-img {
-  text-align: left;
-  padding-top: 50px;
-  padding-bottom: 70px;
-}
-.right-img img {
-  max-width: 100%;
-}
-.main-description {
-  margin-top: 30px;
-}
-.git-logo {
-  padding: 5px;
-  width: 20px;
-}
-.Footer__FooterTop {
-  padding-top: 30px;
-}
-.Footer__SocialLinks {
-  width: 200px;
-  display: grid;
-  -webkit-box-align: center;
-  align-items: center;
-  justify-items: center;
-  grid-template-columns: repeat(5, auto);
-  margin: 20px auto;
-}
-.Footer__SocialLinks svg {
-  width: 17px;
-  fill: #a9a9a9;
-}
-.Footer__Copyright {
-  color: #767676;
-  padding-bottom: 30px;
-}
-.hello nav a {
-  color: #2c3e50;
-  text-decoration: none;
-}
-
-.hello nav a svg {
-  position: absolute;
-  padding: 2px 5px;
-  fill: #2c3e50;
-  text-decoration: none;
-}
-.hello nav a svg.back {
-  position: absolute;
-  margin: -1px -30px;
-  fill: #2c3e50;
-  text-decoration: none;
-}
-
-@media screen and (min-width: 480px) {
-  .left-first-img {
-    max-width: 106%;
-  }
-  .left-first-img h1 {
-    margin-top: -50px;
-    font-size: 150px;
-  }
-  .inner-content {
-    padding: 0 50px;
-  }
-}
-@media screen and (min-width: 769px) {
-  .details {
-    padding-top: 150px;
-  }
-  .Card.is-active .Card-header {
-    padding: 15px;
-    justify-content: space-between;
-    margin-left: 0;
-  }
-
-  .right-img {
-    text-align: right;
-    padding-top: 150px;
-    padding-bottom: 80px;
-  }
-  .left-img img {
-    max-width: 700px;
-  }
-  .right-img img {
-    max-width: 700px;
-  }
-  .Card-body-title {
-    text-align: center;
-    font-size: 1.3em;
-  }
-  .left-first-img h1 {
-    font-size: 180px;
-    margin-bottom: 150px;
-  }
-  .Card.is-active .Card-header {
-    padding: 30px;
-  }
-  .main-description {
-    float: right;
-    max-width: 50%;
-    margin-top: -150px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .container-content {
-    max-width: 70vw;
-    padding: 0px 100px;
-  }
-  .left-first-img img {
-    max-height: 800px;
-  }
-  .left-first-img h1 {
-    font-size: 200px;
-    margin-bottom: 170px;
-  }
-  .Card.is-active .Card-header-add {
-    width: 48px;
-    height: 48px;
-  }
-  .Card.is-active .PlusIcon:before,
-  .Card.is-active .PlusIcon:after {
-    height: 20px;
-    margin: 7px 0px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .left-first-img h1 {
-    font-size: 250px;
-    margin-bottom: 170px;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  .Card {
-    max-width: 70vw;
-    /* styles here */
-  }
-  .container-content {
-    max-width: 60vw;
-    padding: 50px 100px;
-  }
-}
-@media only screen and (min-width: 1680px) {
-  .right-img img {
-    max-width: 900px;
-  }
-  .left-img img {
-    max-width: 900px;
-  }
-}
-@media only screen and (min-width: 1920px) {
-  .left-first-img h1 {
-    width: 60%;
-  }
-
-  .Card {
-    max-width: 65vw;
-    /* styles here */
-  }
-  .container-content {
-    max-width: 50vw;
-  }
-}
-[role="button"]:focus {
-  outline: 2px solid #42b983;  /* Custom focus indicator for elements acting as buttons */
-}
-
+@import '../assets/AppListStyles.css';
 </style>
