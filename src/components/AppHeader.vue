@@ -23,16 +23,5 @@ export default {
       this.scrollPosition = document.getElementById("scroll-3").scrollTop;
     }
   },
-  mounted: function() {
-    document
-      .getElementById("scroll-1")
-      .addEventListener("scroll", this.updateScroll1);
-    document
-      .getElementById("scroll-2")
-      .addEventListener("scroll", this.updateScroll2);
-    document
-      .getElementById("scroll-3")
-      .addEventListener("scroll", this.updateScroll3);
-  }
 };
 </script>
