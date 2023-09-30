@@ -104,21 +104,74 @@
                       Role:
                       <span v-html="card.title"></span>
                     </p>
-                    <a v-if="card.url" target="_blank" :href="card.url" aria-label="Opens the project a new tab">Go to project</a>
+                    <a
+                      v-if="card.url"
+                      target="_blank"
+                      :href="card.url"
+                      aria-label="Opens the project in a new tab"
+                      :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                    >
+                      Go to project
+                    </a>
+
                     <p>
-                      <a v-if="card.figma" target="_blank" :href="card.figma" aria-label="Opens Figma a new tab">
-                        <img class="git-logo" src="https://cstate.se/assets/figma-logo.png" alt="Image">
-                      </a>
-                      <a v-if="card.git" target="_blank" :href="card.git" aria-label="Opens Github a new tab">
-                        <img class="git-logo" src="https://cstate.se/assets/git-logo.png" alt="Image">
+                      <a
+                        v-if="card.figma"
+                        target="_blank"
+                        :href="card.figma"
+                        aria-label="Opens Figma a new tab"
+                        :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                      >
+                        <img
+                          class="git-logo"
+                          src="https://cstate.se/assets/figma-logo.png"
+                          alt="Figma Logo"
+                        />
                       </a>
 
-                      <a v-if="card.linkedin" target="_blank" :href="card.linkedin" aria-label="Opens LinkedIn a new tab">
-                        <img class="git-logo" src="https://cstate.se/assets/linkedin-logo.png" alt="Image">
+                      <a
+                        v-if="card.git"
+                        target="_blank"
+                        :href="card.git"
+                        aria-label="Opens Github a new tab"
+                        :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                      >
+                        <img
+                          class="git-logo"
+                          src="https://cstate.se/assets/git-logo.png"
+                          alt="Github Logo"
+                        />
                       </a>
-                      <a v-if="card.cv" target="_blank" :href="card.cv" aria-label="Opens CV a new tab">
-                        <img class="git-logo" src="https://cstate.se/assets/cv-logo8.png" alt="Image">
+
+                      <a
+                        v-if="card.linkedin"
+                        target="_blank"
+                        :href="card.linkedin"
+                        aria-label="Opens LinkedIn a new tab"
+                        :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                      >
+                        <img
+                          class="git-logo"
+                          src="https://cstate.se/assets/linkedin-logo.png"
+                          alt="LinkedIn Logo"
+                        />
                       </a>
+
+                      <a
+                        v-if="card.cv"
+                        target="_blank"
+                        :href="card.cv"
+                        aria-label="Opens CV a new tab"
+                        :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                      >
+                        <img
+                          class="git-logo"
+                          src="https://cstate.se/assets/cv-logo8.png"
+                          alt="CV Logo"
+                        />
+                      </a>
+                    </p>
+
                     </p>
                   </div>
                 </div>
@@ -233,19 +286,73 @@
                       Role:
                       <span v-html="card.title"></span>
                     </p>
-                    <a v-if="card.url" target="_blank" :href="card.url" aria-label="Opens hte project a new tab">Go to project</a>
+                      <a
+                      v-if="card.url"
+                      target="_blank"
+                      :href="card.url"
+                      aria-label="Opens the project in a new tab"
+                      :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                    >
+                      Go to project
+                    </a>
+                    
                     <p>
-                      <a v-if="card.git" target="_blank" :href="card.git" aria-label="Opens Github a new tab">
-                        <img class="git-logo" src="https://cstate.se/assets/git-logo.png" alt="Github">
+                      <a
+                        v-if="card.figma"
+                        target="_blank"
+                        :href="card.figma"
+                        aria-label="Opens Figma a new tab"
+                        :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                      >
+                        <img
+                          class="git-logo"
+                          src="https://cstate.se/assets/figma-logo.png"
+                          alt="Figma Logo"
+                        />
                       </a>
-
-                      <a v-if="card.linkedin" target="_blank" :href="card.linkedin" aria-label="Opens Linkedin a new tab">
-                        <img class="git-logo" src="https://cstate.se/assets/linkedin-logo.png" alt="Linkedin">
+                    
+                      <a
+                        v-if="card.git"
+                        target="_blank"
+                        :href="card.git"
+                        aria-label="Opens Github a new tab"
+                        :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                      >
+                        <img
+                          class="git-logo"
+                          src="https://cstate.se/assets/git-logo.png"
+                          alt="Github Logo"
+                        />
                       </a>
-                      <a v-if="card.cv" target="_blank" :href="card.cv" aria-label="Opens CV a new tab">
-                        <img class="git-logo" src="https://cstate.se/assets/cv-logo8.png" alt="CV">
+                    
+                      <a
+                        v-if="card.linkedin"
+                        target="_blank"
+                        :href="card.linkedin"
+                        aria-label="Opens LinkedIn a new tab"
+                        :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                      >
+                        <img
+                          class="git-logo"
+                          src="https://cstate.se/assets/linkedin-logo.png"
+                          alt="LinkedIn Logo"
+                        />
                       </a>
-                    </p>
+                    
+                      <a
+                        v-if="card.cv"
+                        target="_blank"
+                        :href="card.cv"
+                        aria-label="Opens CV a new tab"
+                        :tabindex="transitionIndex === index && transitioning ? '0' : '-1'"
+                      >
+                        <img
+                          class="git-logo"
+                          src="https://cstate.se/assets/cv-logo8.png"
+                          alt="CV Logo"
+                        />
+                      </a>
+                    </p>                  
                   </div>
                 </div>
 
